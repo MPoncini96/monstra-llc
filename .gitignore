@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Windows folder metadata
+desktop.ini
+
+# Oversized notebook (79MB of embedded plot output) - kept locally, not in git.
+# GitHub warns above 50MB; use Git LFS or strip outputs if this needs to ship.
+AcademicCode/Project 1 Gradient Descent Poncini Arteaga Mendoza.ipynb

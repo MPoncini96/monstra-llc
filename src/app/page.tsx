@@ -114,6 +114,85 @@ const mlProjects = [
   },
 ];
 
+const academicWork = [
+  {
+    title: "Fine-Tuning a Quantized LLM for Sentiment Signal Generation in FOREX News",
+    course: "CSE 590: Generative AI",
+    term: "Summer 2025",
+    summary:
+      "Fine-tuned a quantized LLaMA-2 model on foreign-exchange news to generate directional sentiment signals, covering the full data-extraction pipeline, training parameters, and evaluation of results.",
+    paper: "/academic/forex-llm-sentiment-signals.pdf",
+  },
+  {
+    title: "Genetics and Wisdom of Crowds Hybrid Algorithm for Open Shop Scheduling",
+    course: "CSE 545: Artificial Intelligence",
+    term: "Fall 2025",
+    summary:
+      "Combined five independently evolving genetic-algorithm populations through a Wisdom of Crowds aggregation step to solve open-shop scheduling problems, then measured the effect on solution quality.",
+    paper: "/academic/open-shop-scheduling-ga-woc.pdf",
+    code: "/academic/open-shop-scheduling-ga-woc.ipynb",
+  },
+  {
+    title: "Unsupervised Clustering and Pattern Recognition of a 9-mer Peptide Dataset",
+    course: "CSE 632: Data Mining",
+    term: "Fall 2025",
+    summary:
+      "Clustered one million 9-mer peptides drawn from human, viral, bacterial, and cancer sources using HDBSCAN and UMAP. Found clear physicochemical structure, but none of the 229 engineered features could reliably recover a peptide's biological origin.",
+    paper: "/academic/peptide-clustering.pdf",
+  },
+  {
+    title: "Classification of a Trojan Horse Data Set",
+    course: "CSE 632: Data Mining",
+    term: "Fall 2025",
+    summary:
+      "Built and compared six binary classifiers over ~160k web-traffic flows with 85 features, then stacked the top performers into an ensemble to separate trojan from benign traffic.",
+    paper: "/academic/trojan-horse-classification.pdf",
+    code: "/academic/trojan-horse-classification.ipynb",
+  },
+  {
+    title:
+      "Simulated Annealing and Niching Genetic Algorithms for the Bottleneck Traveling Salesman Problem",
+    course: "CSE 620: Evolutionary Computation",
+    term: "Fall 2025",
+    summary:
+      "Surveyed exact and approximate approaches to the bottleneck TSP, then compared simulated annealing against niching genetic algorithms on an objective whose landscape is dominated by plateaus.",
+    paper: "/academic/bottleneck-tsp-sa-niching-ga.pdf",
+  },
+  {
+    title: "Niching Genetic Algorithm Experimentation",
+    course: "CSE 620: Evolutionary Computation",
+    term: "Fall 2025",
+    summary:
+      "Applied a standard GA, deterministic crowding, and parallel hillclimbing to multimodal benchmark functions, analyzing convergence, population distribution, and each method's ability to hold multiple optima.",
+    paper: "/academic/niching-ga-experimentation.pdf",
+  },
+  {
+    title: "Gradient Descent Optimization Methods",
+    course: "CSE 620: Evolutionary Computation",
+    term: "Fall 2025",
+    summary:
+      "Implemented and compared vanilla gradient descent, Newton's method, AdaGrad, and Adam across three-dimensional surfaces at varying starting points and learning rates.",
+    paper: "/academic/gradient-descent-optimization.pdf",
+  },
+  {
+    title: "Trie Data Structure for Automatic Search Completion",
+    course: "CSE 503: Data Structures and Operating Systems",
+    term: "Summer 2024",
+    summary:
+      "Designed a trie-backed autocomplete structure and evaluated its lookup and insertion behavior against the demands of interactive search.",
+    paper: "/academic/trie-search-completion.pdf",
+  },
+  {
+    title: "Round Robin CPU Scheduling",
+    course: "CSE 503: Data Structures and Operating Systems",
+    term: "Summer 2024",
+    summary:
+      "Implemented a round-robin CPU scheduler in C++ and analyzed how quantum size drives turnaround and waiting time.",
+    paper: "/academic/round-robin-cpu-scheduling.pdf",
+    code: "/academic/round-robin-cpu-scheduling.cpp",
+  },
+];
+
 const additionalExperience = [
   {
     role: "Staff Sergeant, 94H Test, Measurement, and Diagnostic Equipment Specialist",
@@ -325,6 +404,47 @@ export default function Home() {
                   <span className="text-xs text-parchment/50">{year}</span>
                 </div>
                 <Bullets items={bullets} />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Academic Work */}
+        <section className="mt-14">
+          <SectionHeading>Academic Work</SectionHeading>
+          <p className="-mt-2 mb-6 text-sm leading-relaxed text-parchment/70">
+            Selected papers and code from my M.S. in Computer Science at the University of
+            Louisville and prior coursework.
+          </p>
+          <div className="space-y-8">
+            {academicWork.map(({ title, course, term, summary, paper, code }) => (
+              <article key={paper}>
+                <h3 className="text-base font-semibold text-white">{title}</h3>
+                <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4">
+                  <span className="text-xs font-semibold text-gold">{course}</span>
+                  <span className="text-xs text-parchment/50">{term}</span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-parchment/70">{summary}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href={paper}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-purple-mid/50 bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-parchment transition-all duration-200 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
+                  >
+                    Paper
+                  </a>
+                  {code && (
+                    <a
+                      href={code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-purple-mid/50 bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-parchment transition-all duration-200 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
+                    >
+                      Code
+                    </a>
+                  )}
+                </div>
               </article>
             ))}
           </div>
