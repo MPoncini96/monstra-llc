@@ -84,6 +84,7 @@ const mlProjects = [
   {
     title: "Fine-Tuning LLaMA-2-7B with QLoRA",
     year: "2025",
+    paper: "/academic/qlora-finetuning-llama2.pdf",
     bullets: [
       "Fine-tuned LLaMA-2-7B on a domain-specific financial question-answering dataset using PyTorch, Hugging Face Transformers, PEFT, TRL, BitsAndBytes, and QLoRA.",
       "Built a complete training and evaluation pipeline with separate training and held-out test sets, covering tokenization, batching, GPU execution, generation, output extraction, and metric computation.",
@@ -95,6 +96,7 @@ const mlProjects = [
   {
     title: "LLM-Based Financial Signal Generation",
     year: "2025",
+    paper: "/academic/forex-llm-sentiment-signals.pdf",
     bullets: [
       "Designed an end-to-end ML experiment testing whether economic-news language contained useful information for predicting subsequent foreign-exchange movement.",
       "Collected and labeled 1,160 historical news observations, aligned them with future EURUSD, EURJPY, and USDJPY price changes, and created directional classification targets.",
@@ -106,6 +108,8 @@ const mlProjects = [
   {
     title: "Open Shop Scheduling with Wisdom of Crowds",
     year: "2025",
+    paper: "/academic/open-shop-scheduling-ga-woc.pdf",
+    code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
     bullets: [
       "Built Python experiments using five independently evolving genetic-algorithm populations with different parameter configurations to solve open-shop scheduling problems.",
       "Designed fitness functions, selection and mutation workflows, experiment tracking, parameter comparison, and statistical evaluation.",
@@ -124,13 +128,33 @@ const academicWork = [
     paper: "/academic/forex-llm-sentiment-signals.pdf",
   },
   {
+    title: "Fine-Tuning LLaMA-2-7B with QLoRA on a Financial QA Dataset",
+    course: "CSE 590: Generative AI",
+    term: "Summer 2025",
+    summary:
+      "Fine-tuned a 4-bit quantized LLaMA-2-7B with LoRA adapters on the finance-alpaca dataset, then scored the pretrained and tuned models against a held-out test set with ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum.",
+    paper: "/academic/qlora-finetuning-llama2.pdf",
+  },
+  {
     title: "Genetics and Wisdom of Crowds Hybrid Algorithm for Open Shop Scheduling",
     course: "CSE 545: Artificial Intelligence",
     term: "Fall 2025",
     summary:
       "Combined five independently evolving genetic-algorithm populations through a Wisdom of Crowds aggregation step to solve open-shop scheduling problems, then measured the effect on solution quality.",
     paper: "/academic/open-shop-scheduling-ga-woc.pdf",
-    code: "/academic/open-shop-scheduling-ga-woc.ipynb",
+    code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
+  },
+  {
+    title: "Genetics and Wisdom of Crowds Hybrid Algorithm for the Traveling Salesman Problem",
+    course: "CSE 545: Artificial Intelligence",
+    term: "Fall 2025",
+    summary:
+      "Folded a Wisdom of Crowds aggregation step directly into the crossover operator of a genetic algorithm, so each offspring inherits high-frequency edges from the wider population as well as from its parents. Produced higher-quality tours than the prior GA-only implementation.",
+    paper: "/academic/tsp-ga-wisdom-of-crowds.pdf",
+    code: [
+      { label: "Algorithm", href: "/academic/tsp-ga-wisdom-of-crowds.ipynb" },
+      { label: "Driver", href: "/academic/tsp-ga-wisdom-of-crowds-main.ipynb" },
+    ],
   },
   {
     title: "Unsupervised Clustering and Pattern Recognition of a 9-mer Peptide Dataset",
@@ -147,7 +171,7 @@ const academicWork = [
     summary:
       "Built and compared six binary classifiers over ~160k web-traffic flows with 85 features, then stacked the top performers into an ensemble to separate trojan from benign traffic.",
     paper: "/academic/trojan-horse-classification.pdf",
-    code: "/academic/trojan-horse-classification.ipynb",
+    code: [{ label: "Code", href: "/academic/trojan-horse-classification.ipynb" }],
   },
   {
     title:
@@ -189,7 +213,7 @@ const academicWork = [
     summary:
       "Implemented a round-robin CPU scheduler in C++ and analyzed how quantum size drives turnaround and waiting time.",
     paper: "/academic/round-robin-cpu-scheduling.pdf",
-    code: "/academic/round-robin-cpu-scheduling.cpp",
+    code: [{ label: "C++ Source", href: "/academic/round-robin-cpu-scheduling.cpp" }],
   },
 ];
 
@@ -262,6 +286,31 @@ function Bullets({ items }: { items: string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function ResourceLinks({
+  paper,
+  code,
+}: {
+  paper: string;
+  code?: { label: string; href: string }[];
+}) {
+  const links = [{ label: "Paper", href: paper }, ...(code ?? [])];
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {links.map(({ label, href }) => (
+        <a
+          key={href}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-purple-mid/50 bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-parchment transition-all duration-200 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
   );
 }
 
@@ -397,13 +446,14 @@ export default function Home() {
         <section className="mt-14">
           <SectionHeading>Selected Machine Learning and Evaluation Projects</SectionHeading>
           <div className="space-y-8">
-            {mlProjects.map(({ title, year, bullets }) => (
+            {mlProjects.map(({ title, year, bullets, paper, code }) => (
               <article key={title}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-base font-semibold text-white">{title}</h3>
                   <span className="text-xs text-parchment/50">{year}</span>
                 </div>
                 <Bullets items={bullets} />
+                <ResourceLinks paper={paper} code={code} />
               </article>
             ))}
           </div>
@@ -425,26 +475,7 @@ export default function Home() {
                   <span className="text-xs text-parchment/50">{term}</span>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-parchment/70">{summary}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a
-                    href={paper}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-purple-mid/50 bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-parchment transition-all duration-200 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
-                  >
-                    Paper
-                  </a>
-                  {code && (
-                    <a
-                      href={code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full border border-purple-mid/50 bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-parchment transition-all duration-200 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
-                    >
-                      Code
-                    </a>
-                  )}
-                </div>
+                <ResourceLinks paper={paper} code={code} />
               </article>
             ))}
           </div>
