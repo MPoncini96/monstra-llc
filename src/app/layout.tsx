@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#0a0a0f] font-sans">
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0f]/85 backdrop-blur">
-          <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-4">
-            <Link href="/" className="text-lg font-bold tracking-tight text-white">
-              <span className="bg-gradient-to-br from-violet-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Monstra
-              </span>
-              , LLC
+      <body className="min-h-full flex flex-col bg-ink font-sans">
+        <header className="sticky top-0 z-50 border-b-2 border-gold/40 bg-purple-deep">
+          <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-5">
+            <Link
+              href="/"
+              className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              <span className="text-gold">Monstra</span>, LLC
             </Link>
             <Link
               href="/future-projects"
-              className="text-[11px] font-semibold uppercase tracking-widest text-gray-500 transition-colors hover:text-purple-400"
+              className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
             >
               Future Projects
             </Link>

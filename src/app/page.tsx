@@ -167,7 +167,7 @@ const education = [
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 border-b border-white/10 pb-2 text-xl font-semibold tracking-tight text-white">
+    <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
       {children}
     </h2>
   );
@@ -177,8 +177,8 @@ function Bullets({ items }: { items: string[] }) {
   return (
     <ul className="mt-3 space-y-2">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-relaxed text-gray-400">
-          <span aria-hidden className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-purple-500/70" />
+        <li key={item} className="flex gap-3 text-sm leading-relaxed text-parchment/70">
+          <span aria-hidden className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-gold" />
           <span>{item}</span>
         </li>
       ))}
@@ -188,7 +188,7 @@ function Bullets({ items }: { items: string[] }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] px-6 py-16">
+    <main className="min-h-screen bg-ink px-6 py-16">
       <div className="mx-auto w-full max-w-3xl">
         {/* Hero */}
         <header className="flex flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
@@ -198,23 +198,23 @@ export default function Home() {
             width={256}
             height={256}
             priority
-            className="h-36 w-36 shrink-0 rounded-2xl border border-white/10 object-cover shadow-[0_12px_40px_rgba(124,58,237,0.20)] sm:h-40 sm:w-40"
+            className="h-52 w-52 shrink-0 rounded-2xl border-2 border-gold/50 object-cover shadow-[0_12px_40px_rgba(42,18,80,0.65)] sm:h-64 sm:w-64"
           />
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Matthew Poncini
             </h1>
-            <p className="mt-2 text-sm font-medium text-gray-300 sm:text-base">
+            <p className="mt-2 text-sm font-medium text-parchment sm:text-base">
               Founder, Monstra, LLC
-              <span aria-hidden className="mx-2 text-gray-600">
+              <span aria-hidden className="mx-2 text-gold/60">
                 ·
               </span>
               Full-Stack Software Engineer, Monstra.bot
             </p>
-            <p className="mt-1 text-sm text-gray-400">
+            <p className="mt-1 text-sm text-parchment/70">
               AI Infrastructure, Data Systems, and Evaluation
             </p>
-            <p className="mt-1 text-xs uppercase tracking-widest text-gray-500">
+            <p className="mt-1 text-xs uppercase tracking-widest text-parchment/50">
               San Francisco, CA
             </p>
 
@@ -225,7 +225,7 @@ export default function Home() {
                   href={href}
                   target={href.startsWith("mailto:") ? undefined : "_blank"}
                   rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold text-gray-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-500/40 hover:bg-white/[0.07] hover:text-white"
+                  className="flex items-center gap-2 rounded-full border border-purple-mid/50 bg-surface px-4 py-2 text-xs font-semibold text-parchment transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/60 hover:bg-surface-2 hover:text-gold"
                 >
                   <span aria-hidden className="text-sm">
                     {icon}
@@ -240,7 +240,7 @@ export default function Home() {
         {/* Professional Summary */}
         <section className="mt-14">
           <SectionHeading>Professional Summary</SectionHeading>
-          <p className="text-sm leading-relaxed text-gray-400">
+          <p className="text-sm leading-relaxed text-parchment/70">
             Full-stack software engineer with an M.S. in Computer Science and B.S. in Applied
             Mathematics, focused on AI infrastructure, data-intensive applications, evaluation
             systems, and production workflows. Founder of Monstra, where I built and operate a
@@ -261,17 +261,17 @@ export default function Home() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] px-5 py-7 text-center transition-all duration-200 hover:-translate-y-1 hover:border-purple-500/40 hover:bg-white/[0.06] hover:shadow-[0_12px_40px_rgba(124,58,237,0.18)]"
+                className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-purple-mid/40 bg-surface px-5 py-7 text-center transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
               >
                 <span className="text-3xl">{icon}</span>
-                <span className="text-sm font-semibold text-gray-200">{label}</span>
-                <span className="text-[11px] leading-snug text-purple-400/70">{tag}</span>
+                <span className="text-sm font-semibold text-parchment">{label}</span>
+                <span className="text-[11px] leading-snug text-gold-soft/80">{tag}</span>
               </a>
             ))}
           </div>
           <Link
             href="/future-projects"
-            className="mt-4 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-white/10 px-5 py-4 text-sm font-semibold text-gray-400 transition-all duration-200 hover:border-purple-500/40 hover:text-white"
+            className="mt-4 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-gold/35 px-5 py-4 text-sm font-semibold text-gold-soft/85 transition-all duration-200 hover:border-gold/70 hover:text-gold"
           >
             Future Projects
             <span aria-hidden>→</span>
@@ -284,8 +284,8 @@ export default function Home() {
           <dl className="space-y-4">
             {skills.map(({ heading, items }) => (
               <div key={heading}>
-                <dt className="text-sm font-semibold text-gray-200">{heading}</dt>
-                <dd className="mt-1 text-sm leading-relaxed text-gray-400">{items}</dd>
+                <dt className="text-sm font-semibold text-parchment">{heading}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-parchment/70">{items}</dd>
               </div>
             ))}
           </dl>
@@ -302,10 +302,10 @@ export default function Home() {
                   className="flex flex-wrap items-baseline justify-between gap-x-4"
                 >
                   <h3 className="text-base font-semibold text-white">{title}</h3>
-                  <span className="text-sm font-semibold text-purple-400">{org}</span>
+                  <span className="text-sm font-semibold text-gold">{org}</span>
                 </div>
               ))}
-              <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-gray-500">
+              <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-parchment/50">
                 <span>{location}</span>
                 <span>{dates}</span>
               </div>
@@ -322,7 +322,7 @@ export default function Home() {
               <article key={title}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-base font-semibold text-white">{title}</h3>
-                  <span className="text-xs text-gray-500">{year}</span>
+                  <span className="text-xs text-parchment/50">{year}</span>
                 </div>
                 <Bullets items={bullets} />
               </article>
@@ -338,9 +338,9 @@ export default function Home() {
               <article key={role}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-base font-semibold text-white">{role}</h3>
-                  <span className="text-sm font-semibold text-purple-400">{org}</span>
+                  <span className="text-sm font-semibold text-gold">{org}</span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-gray-500">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-parchment/50">
                   <span>{location}</span>
                   <span>{dates}</span>
                 </div>
@@ -358,19 +358,19 @@ export default function Home() {
               <article key={school}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-base font-semibold text-white">{school}</h3>
-                  <span className="text-xs text-gray-500">{dates}</span>
+                  <span className="text-xs text-parchment/50">{dates}</span>
                 </div>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <p className="text-sm font-semibold text-gray-300">{degree}</p>
-                  <span className="text-xs text-gray-500">{location}</span>
+                  <p className="text-sm font-semibold text-parchment">{degree}</p>
+                  <span className="text-xs text-parchment/50">{location}</span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-gray-400">{detail}</p>
+                <p className="mt-2 text-sm leading-relaxed text-parchment/70">{detail}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <footer className="mt-16 border-t border-white/10 pt-6 text-center text-xs tracking-wide text-gray-700">
+        <footer className="mt-16 border-t border-purple-mid/40 pt-6 text-center text-xs tracking-wide text-parchment/35">
           © {new Date().getFullYear()} Monstra LLC
         </footer>
       </div>
