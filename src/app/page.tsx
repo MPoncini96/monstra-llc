@@ -58,8 +58,11 @@ const skills = [
 
 const experience = [
   {
-    role: "Founder & Full-Stack Software Engineer",
-    org: "Monstra.bot",
+    key: "monstra",
+    roles: [
+      { title: "Founder", org: "Monstra, LLC" },
+      { title: "Full-Stack Software Engineer", org: "Monstra.bot" },
+    ],
     location: "San Francisco, CA",
     dates: "2026–Present",
     bullets: [
@@ -199,13 +202,17 @@ export default function Home() {
           />
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Matthew{" "}
-              <span className="bg-gradient-to-br from-violet-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Poncini
-              </span>
+              Matthew Poncini
             </h1>
             <p className="mt-2 text-sm font-medium text-gray-300 sm:text-base">
-              Full-Stack Software Engineer — AI Infrastructure, Data Systems, and Evaluation
+              Founder, Monstra, LLC
+              <span aria-hidden className="mx-2 text-gray-600">
+                ·
+              </span>
+              Full-Stack Software Engineer, Monstra.bot
+            </p>
+            <p className="mt-1 text-sm text-gray-400">
+              AI Infrastructure, Data Systems, and Evaluation
             </p>
             <p className="mt-1 text-xs uppercase tracking-widest text-gray-500">
               San Francisco, CA
@@ -287,13 +294,18 @@ export default function Home() {
         {/* Experience */}
         <section className="mt-14">
           <SectionHeading>Experience</SectionHeading>
-          {experience.map(({ role, org, location, dates, bullets }) => (
-            <article key={org}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="text-base font-semibold text-white">{role}</h3>
-                <span className="text-sm font-semibold text-purple-400">{org}</span>
-              </div>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-gray-500">
+          {experience.map(({ key, roles, location, dates, bullets }) => (
+            <article key={key}>
+              {roles.map(({ title, org }) => (
+                <div
+                  key={org}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4"
+                >
+                  <h3 className="text-base font-semibold text-white">{title}</h3>
+                  <span className="text-sm font-semibold text-purple-400">{org}</span>
+                </div>
+              ))}
+              <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-gray-500">
                 <span>{location}</span>
                 <span>{dates}</span>
               </div>
