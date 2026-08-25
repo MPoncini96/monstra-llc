@@ -320,14 +320,16 @@ export default function Home() {
       <div className="mx-auto w-full max-w-3xl">
         {/* Hero */}
         <header className="flex flex-col items-center gap-6 text-center sm:flex-row sm:gap-8 sm:text-left">
-          <Image
-            src="/profile.jpg"
-            alt="Matthew Poncini"
-            width={958}
-            height={719}
-            priority
-            className="h-64 w-64 shrink-0 rounded-2xl border-2 border-gold/50 object-cover shadow-[0_12px_40px_rgba(42,18,80,0.65)] sm:h-72 sm:w-72"
-          />
+          <div className="relative h-64 w-64 shrink-0 overflow-hidden rounded-2xl border-2 border-gold/50 shadow-[0_12px_40px_rgba(42,18,80,0.65)] sm:h-72 sm:w-72">
+            <Image
+              src="/profile.jpg"
+              alt="Matthew Poncini"
+              fill
+              priority
+              sizes="(min-width: 640px) 26rem, 24rem"
+              className="scale-[1.45] object-cover origin-[54%_59%]"
+            />
+          </div>
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Matthew Poncini
