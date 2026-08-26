@@ -42,6 +42,7 @@ const projectLinks = [
     label: "park-quest.buzz",
     href: "https://park-quest.buzz",
     icon: "📸",
+    iconSrc: "/parkquest.webp",
     tag: "Group photo scavenger hunt",
   },
 ];

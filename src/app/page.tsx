@@ -36,6 +36,7 @@ const network: Site[] = [
     label: "Monstra.guide",
     href: "https://monstra.guide",
     icon: "🧭",
+    iconSrc: "/monstraguide.webp",
     tagline: "Turn everyday work into a living AI textbook",
     description:
       "A workflow documentation platform. Senior staff record themselves doing a task, and those recordings become interactive step-by-step guides with screenshots and explanations for training and onboarding. Recording state stays visible, guides pass through human review, and sensitive applications or screenshots can be excluded before anything becomes shared knowledge.",
@@ -44,6 +45,7 @@ const network: Site[] = [
     label: "Monstra.study",
     href: "https://monstra.study",
     icon: "📚",
+    iconSrc: "/monstra-study.webp",
     tagline: "Online education system",
     description:
       "An online education system, and a blueprint for how future schools could be run. It carries the classroom experience behind the rest of the network into something that scales past one room.",
@@ -61,6 +63,7 @@ const network: Site[] = [
     label: "park-quest.buzz",
     href: "https://park-quest.buzz",
     icon: "📸",
+    iconSrc: "/parkquest.webp",
     tagline: "14 photo challenges, one phone each",
     description:
       "A photo scavenger hunt built for groups outdoors. Everyone brings a phone, works through fourteen photo challenges, and either joins someone else's hunt with a code or sets up a new one.",
