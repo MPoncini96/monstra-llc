@@ -35,6 +35,12 @@ const projectLinks = [
     icon: "🌍",
     tag: "Earth on a hex globe",
   },
+  {
+    label: "park-quest.buzz",
+    href: "https://park-quest.buzz",
+    icon: "📸",
+    tag: "Group photo scavenger hunt",
+  },
 ];
 
 const skills = [
@@ -551,7 +557,7 @@ export default function Home() {
         {/* Projects */}
         <section className="mt-14">
           <SectionHeading>Projects</SectionHeading>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {projectLinks.map(({ label, href, icon, tag }) => (
               <a
                 key={href}
