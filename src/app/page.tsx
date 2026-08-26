@@ -226,6 +226,7 @@ const academicWork = [
     summary:
       "Folded a Wisdom of Crowds aggregation step directly into the crossover operator of a genetic algorithm, so each offspring inherits high-frequency edges from the wider population as well as from its parents. Produced higher-quality tours than the prior GA-only implementation.",
     paper: "/academic/tsp-ga-wisdom-of-crowds.pdf",
+    demo: { label: "Interactive Demo", href: "/tsp" },
     figures: [
       {
         src: "/academic/figures/tsp-ga-wisdom-of-crowds--convergence.webp",
@@ -503,13 +504,23 @@ function Bullets({ items }: { items: string[] }) {
 function ResourceLinks({
   paper,
   code,
+  demo,
 }: {
   paper: string;
   code?: { label: string; href: string }[];
+  demo?: { label: string; href: string };
 }) {
   const links = [{ label: "Paper", href: paper }, ...(code ?? [])];
   return (
     <div className="mt-3 flex flex-wrap gap-2">
+      {demo && (
+        <Link
+          href={demo.href}
+          className="rounded-full border border-gold bg-gold/15 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-gold transition-all duration-200 hover:bg-gold/25"
+        >
+          {demo.label}
+        </Link>
+      )}
       {links.map(({ label, href }) => (
         <a
           key={href}
@@ -681,7 +692,7 @@ export default function Home() {
             Louisville and prior coursework.
           </p>
           <div className="space-y-8">
-            {academicWork.map(({ title, course, term, summary, paper, code, figures }) => (
+            {academicWork.map(({ title, course, term, summary, paper, code, figures, demo }) => (
               <article key={paper}>
                 <h3 className="text-base font-semibold text-white">{title}</h3>
                 <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4">
@@ -690,7 +701,7 @@ export default function Home() {
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-parchment/70">{summary}</p>
                 <FigureGallery figures={figures} label={title} />
-                <ResourceLinks paper={paper} code={code} />
+                <ResourceLinks paper={paper} code={code} demo={demo} />
               </article>
             ))}
           </div>
