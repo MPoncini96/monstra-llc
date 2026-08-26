@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FigureGallery from "./FigureGallery";
 
 const contactLinks = [
   { label: "Resume", href: "/PonciniResume.pdf", icon: "📄" },
@@ -85,6 +86,13 @@ const mlProjects = [
     title: "Fine-Tuning LLaMA-2-7B with QLoRA",
     year: "2025",
     paper: "/academic/qlora-finetuning-llama2.pdf",
+    figures: [
+      {
+        src: "/academic/figures/qlora-finetuning-llama2--rouge.webp",
+        caption:
+          "ROUGE before and after fine-tuning, charted from the scores reported in the paper.",
+      },
+    ],
     bullets: [
       "Fine-tuned LLaMA-2-7B on a domain-specific financial question-answering dataset using PyTorch, Hugging Face Transformers, PEFT, TRL, BitsAndBytes, and QLoRA.",
       "Built a complete training and evaluation pipeline with separate training and held-out test sets, covering tokenization, batching, GPU execution, generation, output extraction, and metric computation.",
@@ -97,6 +105,21 @@ const mlProjects = [
     title: "LLM-Based Financial Signal Generation",
     year: "2025",
     paper: "/academic/forex-llm-sentiment-signals.pdf",
+    figures: [
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--accuracy.webp",
+        caption: "Directional accuracy before and after fine-tuning, by currency pair.",
+      },
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--labels.webp",
+        caption: "Reference label distribution — Neutral dominates all three pairs.",
+      },
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--collapse.webp",
+        caption:
+          "On rising-price windows the tuned model scored 0%, the signature of collapse onto Neutral.",
+      },
+    ],
     bullets: [
       "Designed an end-to-end ML experiment testing whether economic-news language contained useful information for predicting subsequent foreign-exchange movement.",
       "Collected and labeled 1,160 historical news observations, aligned them with future EURUSD, EURJPY, and USDJPY price changes, and created directional classification targets.",
@@ -110,6 +133,21 @@ const mlProjects = [
     year: "2025",
     paper: "/academic/open-shop-scheduling-ga-woc.pdf",
     code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
+    figures: [
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-15x10.webp",
+        caption: "Resulting schedule for 15 jobs across 10 machines, makespan 4591.",
+      },
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-10x10.webp",
+        caption: "A 10-job, 10-machine schedule with makespan 370.",
+      },
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--pipeline.webp",
+        caption:
+          "Each generation blends clones, experts, and three Wisdom of Crowds consensus crossovers.",
+      },
+    ],
     bullets: [
       "Built Python experiments using five independently evolving genetic-algorithm populations with different parameter configurations to solve open-shop scheduling problems.",
       "Designed fitness functions, selection and mutation workflows, experiment tracking, parameter comparison, and statistical evaluation.",
@@ -126,6 +164,21 @@ const academicWork = [
     summary:
       "Fine-tuned a quantized LLaMA-2 model on foreign-exchange news to generate directional sentiment signals, covering the full data-extraction pipeline, training parameters, and evaluation of results.",
     paper: "/academic/forex-llm-sentiment-signals.pdf",
+    figures: [
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--accuracy.webp",
+        caption: "Directional accuracy before and after fine-tuning, by currency pair.",
+      },
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--labels.webp",
+        caption: "Reference label distribution — Neutral dominates all three pairs.",
+      },
+      {
+        src: "/academic/figures/forex-llm-sentiment-signals--collapse.webp",
+        caption:
+          "On rising-price windows the tuned model scored 0%, the signature of collapse onto Neutral.",
+      },
+    ],
   },
   {
     title: "Fine-Tuning LLaMA-2-7B with QLoRA on a Financial QA Dataset",
@@ -134,6 +187,13 @@ const academicWork = [
     summary:
       "Fine-tuned a 4-bit quantized LLaMA-2-7B with LoRA adapters on the finance-alpaca dataset, then scored the pretrained and tuned models against a held-out test set with ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum.",
     paper: "/academic/qlora-finetuning-llama2.pdf",
+    figures: [
+      {
+        src: "/academic/figures/qlora-finetuning-llama2--rouge.webp",
+        caption:
+          "ROUGE before and after fine-tuning, charted from the scores reported in the paper.",
+      },
+    ],
   },
   {
     title: "Genetics and Wisdom of Crowds Hybrid Algorithm for Open Shop Scheduling",
@@ -143,6 +203,21 @@ const academicWork = [
       "Combined five independently evolving genetic-algorithm populations through a Wisdom of Crowds aggregation step to solve open-shop scheduling problems, then measured the effect on solution quality.",
     paper: "/academic/open-shop-scheduling-ga-woc.pdf",
     code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
+    figures: [
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-15x10.webp",
+        caption: "Resulting schedule for 15 jobs across 10 machines, makespan 4591.",
+      },
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-10x10.webp",
+        caption: "A 10-job, 10-machine schedule with makespan 370.",
+      },
+      {
+        src: "/academic/figures/open-shop-scheduling-ga-woc--pipeline.webp",
+        caption:
+          "Each generation blends clones, experts, and three Wisdom of Crowds consensus crossovers.",
+      },
+    ],
   },
   {
     title: "Genetics and Wisdom of Crowds Hybrid Algorithm for the Traveling Salesman Problem",
@@ -151,6 +226,23 @@ const academicWork = [
     summary:
       "Folded a Wisdom of Crowds aggregation step directly into the crossover operator of a genetic algorithm, so each offspring inherits high-frequency edges from the wider population as well as from its parents. Produced higher-quality tours than the prior GA-only implementation.",
     paper: "/academic/tsp-ga-wisdom-of-crowds.pdf",
+    figures: [
+      {
+        src: "/academic/figures/tsp-ga-wisdom-of-crowds--convergence.webp",
+        caption:
+          "Min, average, and max tour distance converging over generations.",
+      },
+      {
+        src: "/academic/figures/tsp-ga-wisdom-of-crowds--tour.webp",
+        caption:
+          "A completed offspring tour over the city set.",
+      },
+      {
+        src: "/academic/figures/tsp-ga-wisdom-of-crowds--operators.webp",
+        caption:
+          "Average distance by operator — aggregate, crossover, and mutation variants.",
+      },
+    ],
     code: [
       { label: "Algorithm", href: "/academic/tsp-ga-wisdom-of-crowds.ipynb" },
       { label: "Driver", href: "/academic/tsp-ga-wisdom-of-crowds-main.ipynb" },
@@ -163,6 +255,23 @@ const academicWork = [
     summary:
       "Clustered one million 9-mer peptides drawn from human, viral, bacterial, and cancer sources using HDBSCAN and UMAP. Found clear physicochemical structure, but none of the 229 engineered features could reliably recover a peptide's biological origin.",
     paper: "/academic/peptide-clustering.pdf",
+    figures: [
+      {
+        src: "/academic/figures/peptide-clustering--clusters.webp",
+        caption:
+          "UMAP + HDBSCAN recovers three clear structural clusters.",
+      },
+      {
+        src: "/academic/figures/peptide-clustering--by-source.webp",
+        caption:
+          "The same projection colored by biological source shows no separation — the negative result.",
+      },
+      {
+        src: "/academic/figures/peptide-clustering--subclusters.webp",
+        caption:
+          "Sub-clustering within each top-level cluster.",
+      },
+    ],
   },
   {
     title: "Classification of a Trojan Horse Data Set",
@@ -171,6 +280,23 @@ const academicWork = [
     summary:
       "Built and compared six binary classifiers over ~160k web-traffic flows with 85 features, then stacked the top performers into an ensemble to separate trojan from benign traffic.",
     paper: "/academic/trojan-horse-classification.pdf",
+    figures: [
+      {
+        src: "/academic/figures/trojan-horse-classification--roc-rf.webp",
+        caption:
+          "Random Forest ROC, AUC 0.767 — the strongest single classifier.",
+      },
+      {
+        src: "/academic/figures/trojan-horse-classification--roc-ensemble.webp",
+        caption:
+          "Ensemble stacking ROC, AUC 0.722.",
+      },
+      {
+        src: "/academic/figures/trojan-horse-classification--pca.webp",
+        caption:
+          "PCA cumulative variance across the 85 flow features.",
+      },
+    ],
     code: [{ label: "Code", href: "/academic/trojan-horse-classification.ipynb" }],
   },
   {
@@ -181,6 +307,23 @@ const academicWork = [
     summary:
       "Surveyed exact and approximate approaches to the bottleneck TSP, then compared simulated annealing against niching genetic algorithms on an objective whose landscape is dominated by plateaus.",
     paper: "/academic/bottleneck-tsp-sa-niching-ga.pdf",
+    figures: [
+      {
+        src: "/academic/figures/bottleneck-tsp-sa-niching-ga--bottleneck.webp",
+        caption:
+          "Average bottleneck edge length against problem size for every algorithm tested.",
+      },
+      {
+        src: "/academic/figures/bottleneck-tsp-sa-niching-ga--runtime.webp",
+        caption:
+          "Runtime against problem size, log scale.",
+      },
+      {
+        src: "/academic/figures/bottleneck-tsp-sa-niching-ga--distribution.webp",
+        caption:
+          "Bottleneck distribution by algorithm at 100 cities.",
+      },
+    ],
   },
   {
     title: "Niching Genetic Algorithm Experimentation",
@@ -189,6 +332,23 @@ const academicWork = [
     summary:
       "Applied a standard GA, deterministic crowding, and parallel hillclimbing to multimodal benchmark functions, analyzing convergence, population distribution, and each method's ability to hold multiple optima.",
     paper: "/academic/niching-ga-experimentation.pdf",
+    figures: [
+      {
+        src: "/academic/figures/niching-ga-experimentation--baseline-collapse.webp",
+        caption:
+          "Baseline GA collapses its whole population onto a single peak of M1.",
+      },
+      {
+        src: "/academic/figures/niching-ga-experimentation--crowding-spread.webp",
+        caption:
+          "Deterministic crowding holds population across all five peaks.",
+      },
+      {
+        src: "/academic/figures/niching-ga-experimentation--fitness.webp",
+        caption:
+          "Fitness convergence under deterministic crowding.",
+      },
+    ],
   },
   {
     title: "Gradient Descent Optimization Methods",
@@ -197,6 +357,23 @@ const academicWork = [
     summary:
       "Implemented and compared vanilla gradient descent, Newton's method, AdaGrad, and Adam across three-dimensional surfaces at varying starting points and learning rates.",
     paper: "/academic/gradient-descent-optimization.pdf",
+    figures: [
+      {
+        src: "/academic/figures/gradient-descent-optimization--banana.webp",
+        caption:
+          "Descent path across the Rosenbrock banana valley.",
+      },
+      {
+        src: "/academic/figures/gradient-descent-optimization--bowl.webp",
+        caption:
+          "Descent path on the bowl function.",
+      },
+      {
+        src: "/academic/figures/gradient-descent-optimization--adam.webp",
+        caption:
+          "Adam: 3D path, contour path, convergence, and parameter evolution.",
+      },
+    ],
   },
   {
     title: "Trie Data Structure for Automatic Search Completion",
@@ -205,6 +382,23 @@ const academicWork = [
     summary:
       "Designed a trie-backed autocomplete structure and evaluated its lookup and insertion behavior against the demands of interactive search.",
     paper: "/academic/trie-search-completion.pdf",
+    figures: [
+      {
+        src: "/academic/figures/trie-search-completion--prefix-ban.webp",
+        caption:
+          "The prefix ban expands to every stored completion.",
+      },
+      {
+        src: "/academic/figures/trie-search-completion--prefix-grap.webp",
+        caption:
+          "grap returns grape, grapes, and graph.",
+      },
+      {
+        src: "/academic/figures/trie-search-completion--typo.webp",
+        caption:
+          "A misspelled query resolves to the nearest stored word.",
+      },
+    ],
   },
   {
     title: "Round Robin CPU Scheduling",
@@ -213,6 +407,23 @@ const academicWork = [
     summary:
       "Implemented a round-robin CPU scheduler in C++ and analyzed how quantum size drives turnaround and waiting time.",
     paper: "/academic/round-robin-cpu-scheduling.pdf",
+    figures: [
+      {
+        src: "/academic/figures/round-robin-cpu-scheduling--timeline.webp",
+        caption:
+          "Round-robin timeline: three jobs cycling through 5 ms quanta.",
+      },
+      {
+        src: "/academic/figures/round-robin-cpu-scheduling--trace.webp",
+        caption:
+          "Scheduler trace and wait-time summary.",
+      },
+      {
+        src: "/academic/figures/round-robin-cpu-scheduling--scale.webp",
+        caption:
+          "1,001 jobs completed, average wait 28.8 s.",
+      },
+    ],
     code: [{ label: "C++ Source", href: "/academic/round-robin-cpu-scheduling.cpp" }],
   },
 ];
@@ -448,13 +659,14 @@ export default function Home() {
         <section className="mt-14">
           <SectionHeading>Selected Machine Learning and Evaluation Projects</SectionHeading>
           <div className="space-y-8">
-            {mlProjects.map(({ title, year, bullets, paper, code }) => (
+            {mlProjects.map(({ title, year, bullets, paper, code, figures }) => (
               <article key={title}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-base font-semibold text-white">{title}</h3>
                   <span className="text-xs text-parchment/50">{year}</span>
                 </div>
                 <Bullets items={bullets} />
+                <FigureGallery figures={figures} label={title} />
                 <ResourceLinks paper={paper} code={code} />
               </article>
             ))}
@@ -469,7 +681,7 @@ export default function Home() {
             Louisville and prior coursework.
           </p>
           <div className="space-y-8">
-            {academicWork.map(({ title, course, term, summary, paper, code }) => (
+            {academicWork.map(({ title, course, term, summary, paper, code, figures }) => (
               <article key={paper}>
                 <h3 className="text-base font-semibold text-white">{title}</h3>
                 <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4">
@@ -477,6 +689,7 @@ export default function Home() {
                   <span className="text-xs text-parchment/50">{term}</span>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-parchment/70">{summary}</p>
+                <FigureGallery figures={figures} label={title} />
                 <ResourceLinks paper={paper} code={code} />
               </article>
             ))}
