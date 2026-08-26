@@ -35,6 +35,14 @@ const network: Site[] = [
       "A workflow documentation platform. Senior staff record themselves doing a task, and those recordings become interactive step-by-step guides with screenshots and explanations for training and onboarding. Recording state stays visible, guides pass through human review, and sensitive applications or screenshots can be excluded before anything becomes shared knowledge.",
   },
   {
+    label: "Monstra.study",
+    href: "https://monstra.study",
+    icon: "📚",
+    tagline: "Online education system",
+    description:
+      "An online education system, and a blueprint for how future schools could be run. It carries the classroom experience behind the rest of the network into something that scales past one room.",
+  },
+  {
     label: "hexww2.world",
     href: "https://hexww2.world",
     icon: "🌍",
@@ -49,15 +57,6 @@ const network: Site[] = [
     tagline: "14 photo challenges, one phone each",
     description:
       "A photo scavenger hunt built for groups outdoors. Everyone brings a phone, works through fourteen photo challenges, and either joins someone else's hunt with a code or sets up a new one.",
-  },
-  {
-    label: "Monstra.study",
-    href: "https://monstra.study",
-    icon: "📚",
-    tagline: "Online education system",
-    status: "In development",
-    description:
-      "An online education system, and a blueprint for how future schools could be run. It carries the classroom experience behind the rest of the network into something that scales past one room. Not serving yet.",
   },
 ];
 
