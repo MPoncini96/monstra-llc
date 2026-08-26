@@ -566,13 +566,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <Link
-            href="/future-projects"
-            className="mt-4 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-gold/35 px-5 py-4 text-sm font-semibold text-gold-soft/85 transition-all duration-200 hover:border-gold/70 hover:text-gold"
-          >
-            Future Projects
-            <span aria-hidden>→</span>
-          </Link>
         </section>
 
         {/* Technical Skills */}

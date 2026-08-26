@@ -1,6 +1,15 @@
 import Link from "next/link";
 
-const network = [
+type Site = {
+  label: string;
+  href: string;
+  icon: string;
+  tagline: string;
+  description: string;
+  status?: string;
+};
+
+const network: Site[] = [
   {
     label: "Monstra.bot",
     href: "https://monstra.bot",
@@ -24,6 +33,15 @@ const network = [
     tagline: "Turn everyday work into a living AI textbook",
     description:
       "A workflow documentation platform. Senior staff record themselves doing a task, and those recordings become interactive step-by-step guides with screenshots and explanations for training and onboarding. Recording state stays visible, guides pass through human review, and sensitive applications or screenshots can be excluded before anything becomes shared knowledge.",
+  },
+  {
+    label: "Monstra.study",
+    href: "https://monstra.study",
+    icon: "📚",
+    tagline: "Online education system",
+    status: "In development",
+    description:
+      "An online education system, and a blueprint for how future schools could be run — carrying the classroom experience behind the rest of the network into something that scales past one room. Not serving yet.",
   },
   {
     label: "hexww2.world",
@@ -58,39 +76,56 @@ export default function Home() {
             The Network
           </h2>
           <div className="space-y-4">
-            {network.map(({ label, href, icon, tagline, description }) => (
-              <a
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
-              >
-                <div className="flex items-baseline gap-3">
-                  <span aria-hidden className="text-2xl">
-                    {icon}
-                  </span>
-                  <div>
-                    <span className="text-lg font-semibold text-parchment group-hover:text-gold">
-                      {label}
+            {network.map((site) => {
+              const body = (
+                <>
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span aria-hidden className="text-2xl">
+                      {site.icon}
                     </span>
-                    <span className="ml-3 text-[11px] uppercase tracking-widest text-gold-soft/80">
-                      {tagline}
+                    <span
+                      className={`text-lg font-semibold text-parchment ${
+                        site.status ? "" : "group-hover:text-gold"
+                      }`}
+                    >
+                      {site.label}
                     </span>
+                    <span className="text-[11px] uppercase tracking-widest text-gold-soft/80">
+                      {site.tagline}
+                    </span>
+                    {site.status && (
+                      <span className="rounded-full border border-dashed border-gold/45 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-gold-soft/85">
+                        {site.status}
+                      </span>
+                    )}
                   </div>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-parchment/70">{description}</p>
-              </a>
-            ))}
-          </div>
+                  <p className="mt-3 text-sm leading-relaxed text-parchment/70">
+                    {site.description}
+                  </p>
+                </>
+              );
 
-          <Link
-            href="/future-projects"
-            className="mt-4 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-gold/35 px-5 py-4 text-sm font-semibold text-gold-soft/85 transition-all duration-200 hover:border-gold/70 hover:text-gold"
-          >
-            Future Projects
-            <span aria-hidden>→</span>
-          </Link>
+              // Sites still in development have no page to send anyone to yet.
+              return site.status ? (
+                <div
+                  key={site.href}
+                  className="rounded-2xl border border-dashed border-purple-mid/40 bg-surface/60 p-6"
+                >
+                  {body}
+                </div>
+              ) : (
+                <a
+                  key={site.href}
+                  href={site.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
+                >
+                  {body}
+                </a>
+              );
+            })}
+          </div>
         </section>
 
         <section className="mt-14">

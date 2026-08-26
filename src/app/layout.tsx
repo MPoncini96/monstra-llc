@@ -20,20 +20,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             >
               <span className="text-gold">Monstra</span>, LLC
             </Link>
-            <nav className="flex flex-wrap items-center gap-x-5 gap-y-1">
-              <Link
-                href="/MatthewPoncini"
-                className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="/future-projects"
-                className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
-              >
-                Future Projects
-              </Link>
-            </nav>
+            <Link
+              href="/MatthewPoncini"
+              className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
+            >
+              Portfolio
+            </Link>
           </div>
         </header>
         {children}
