@@ -35,6 +35,22 @@ const network: Site[] = [
       "A workflow documentation platform. Senior staff record themselves doing a task, and those recordings become interactive step-by-step guides with screenshots and explanations for training and onboarding. Recording state stays visible, guides pass through human review, and sensitive applications or screenshots can be excluded before anything becomes shared knowledge.",
   },
   {
+    label: "hexww2.world",
+    href: "https://hexww2.world",
+    icon: "🌍",
+    tagline: "Earth on a Hex Globe",
+    description:
+      "A World War II strategy world built on a hex-tiled globe, so the whole Earth is one continuous playable grid rather than a flat map with distorted edges.",
+  },
+  {
+    label: "park-quest.buzz",
+    href: "https://park-quest.buzz",
+    icon: "📸",
+    tagline: "14 photo challenges, one phone each",
+    description:
+      "A photo scavenger hunt built for groups outdoors. Everyone brings a phone, works through fourteen photo challenges, and either joins someone else's hunt with a code or sets up a new one.",
+  },
+  {
     label: "Monstra.study",
     href: "https://monstra.study",
     icon: "📚",
@@ -42,14 +58,6 @@ const network: Site[] = [
     status: "In development",
     description:
       "An online education system, and a blueprint for how future schools could be run — carrying the classroom experience behind the rest of the network into something that scales past one room. Not serving yet.",
-  },
-  {
-    label: "hexww2.world",
-    href: "https://hexww2.world",
-    icon: "🌍",
-    tagline: "Earth on a Hex Globe",
-    description:
-      "A World War II strategy world built on a hex-tiled globe, so the whole Earth is one continuous playable grid rather than a flat map with distorted edges.",
   },
 ];
 
