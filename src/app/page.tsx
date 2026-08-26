@@ -71,53 +71,60 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-ink px-6 py-16">
       <div className="mx-auto w-full max-w-3xl">
-        <header>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            <span className="text-gold">Monstra</span>, LLC
-          </h1>
-          <p className="mt-4 text-base leading-relaxed text-parchment/80">
-            A small software company building quantitative research tools, trading automation, and
-            the odd strange map.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-parchment/65">
-            Everything here is designed and operated end to end, from database and backend
-            services through to the interfaces people actually use, deployment, and production
-            monitoring.
-          </p>
-        </header>
-
-        <section className="mt-14">
-          <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
-            Who Runs It
-          </h2>
-          <Link
-            href="/MatthewPoncini"
-            className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
-          >
-            <div className="flex items-baseline gap-3">
-              <span aria-hidden className="text-2xl">
-                👤
-              </span>
-              <div>
-                <span className="text-lg font-semibold text-parchment group-hover:text-gold">
-                  Matthew Poncini
-                </span>
-                <span className="ml-3 text-[11px] uppercase tracking-widest text-gold-soft/80">
-                  Founder
-                </span>
-              </div>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-parchment/70">
-              Full-stack software engineer working on AI infrastructure, data systems, and
-              evaluation, with an M.S. in Computer Science and a B.S. in Applied Mathematics.
-              Portfolio, resume, and published coursework, including an interactive traveling
-              salesman visualizer.
+        {/* Intro and founder sit side by side on wide screens, stacked on mobile. */}
+        <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-8">
+          <header>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <span className="text-gold">Monstra</span>, LLC
+            </h1>
+            <p className="mt-4 text-base leading-relaxed text-parchment/80">
+              A small software company building quantitative research tools, trading automation,
+              and the odd strange map.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold">
-              View portfolio <span aria-hidden>→</span>
-            </span>
-          </Link>
-        </section>
+            <p className="mt-3 text-sm leading-relaxed text-parchment/65">
+              Everything here is designed and operated end to end, from database and backend
+              services through to the interfaces people actually use, deployment, and production
+              monitoring.
+            </p>
+          </header>
+
+          <section>
+            <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gold">
+              Who Runs It
+            </h2>
+            <Link
+              href="/MatthewPoncini"
+              className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
+            >
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/IMG_4266.webp"
+                  alt=""
+                  width={160}
+                  height={160}
+                  className="h-14 w-14 shrink-0 rounded-full border border-gold/40 object-cover"
+                />
+                <div>
+                  <span className="block text-lg font-semibold text-parchment group-hover:text-gold">
+                    Matthew Poncini
+                  </span>
+                  <span className="text-[11px] uppercase tracking-widest text-gold-soft/80">
+                    Founder
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-parchment/70">
+                Full-stack software engineer working on AI infrastructure, data systems, and
+                evaluation, with an M.S. in Computer Science and a B.S. in Applied Mathematics.
+                Portfolio, resume, and published coursework, including an interactive traveling
+                salesman visualizer.
+              </p>
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold">
+                View portfolio <span aria-hidden>→</span>
+              </span>
+            </Link>
+          </section>
+        </div>
 
         <section className="mt-14">
           <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
