@@ -158,44 +158,6 @@ const mlProjects = [
 
 const academicWork = [
   {
-    title: "Fine-Tuning a Quantized LLM for Sentiment Signal Generation in FOREX News",
-    course: "CSE 590: Generative AI",
-    term: "Summer 2025",
-    summary:
-      "Fine-tuned a quantized LLaMA-2 model on foreign-exchange news to generate directional sentiment signals, covering the full data-extraction pipeline, training parameters, and evaluation of results.",
-    paper: "/academic/forex-llm-sentiment-signals.pdf",
-    figures: [
-      {
-        src: "/academic/figures/forex-llm-sentiment-signals--accuracy.webp",
-        caption: "Directional accuracy before and after fine-tuning, by currency pair.",
-      },
-      {
-        src: "/academic/figures/forex-llm-sentiment-signals--labels.webp",
-        caption: "Reference label distribution — Neutral dominates all three pairs.",
-      },
-      {
-        src: "/academic/figures/forex-llm-sentiment-signals--collapse.webp",
-        caption:
-          "On rising-price windows the tuned model scored 0%, the signature of collapse onto Neutral.",
-      },
-    ],
-  },
-  {
-    title: "Fine-Tuning LLaMA-2-7B with QLoRA on a Financial QA Dataset",
-    course: "CSE 590: Generative AI",
-    term: "Summer 2025",
-    summary:
-      "Fine-tuned a 4-bit quantized LLaMA-2-7B with LoRA adapters on the finance-alpaca dataset, then scored the pretrained and tuned models against a held-out test set with ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum.",
-    paper: "/academic/qlora-finetuning-llama2.pdf",
-    figures: [
-      {
-        src: "/academic/figures/qlora-finetuning-llama2--rouge.webp",
-        caption:
-          "ROUGE before and after fine-tuning, charted from the scores reported in the paper.",
-      },
-    ],
-  },
-  {
     title: "Genetics and Wisdom of Crowds Hybrid Algorithm for the Traveling Salesman Problem",
     course: "CSE 545: Artificial Intelligence",
     term: "Fall 2025",
