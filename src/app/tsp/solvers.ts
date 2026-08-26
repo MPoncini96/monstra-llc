@@ -1,6 +1,6 @@
 // Client-side TSP solvers mirroring the approaches from two papers:
-//   CSE 545 Project 5 — Genetics and Wisdom of Crowds Hybrid Algorithm for TSP
-//   CSE 620 Final     — Simulated Annealing and Niching GAs for the Bottleneck TSP
+//   CSE 545 Project 5: Genetics and Wisdom of Crowds Hybrid Algorithm for TSP
+//   CSE 620 Final:     Simulated Annealing and Niching GAs for the Bottleneck TSP
 // Everything here is pure TypeScript so the demo runs entirely in the browser.
 
 export type Pt = { x: number; y: number };
@@ -56,7 +56,7 @@ export function tourLength(tour: number[], D: Float64Array, n: number): number {
   return s;
 }
 
-/** Longest single edge in the closed tour — the bottleneck objective. */
+/** Longest single edge in the closed tour, the bottleneck objective. */
 export function tourBottleneck(tour: number[], D: Float64Array, n: number): number {
   let m = 0;
   for (let i = 0; i < tour.length; i++) {
@@ -119,7 +119,7 @@ function shuffled(n: number, rnd: () => number): number[] {
   return a;
 }
 
-/** Reverse tour[i..j] — the 2-opt move. */
+/** Reverse tour[i..j], the 2-opt move. */
 function reverse(tour: number[], i: number, j: number) {
   while (i < j) {
     [tour[i], tour[j]] = [tour[j], tour[i]];
@@ -293,7 +293,7 @@ const edgeKey = (a: number, b: number) => (a < b ? a * 4096 + b : b * 4096 + a);
  * Wisdom of Crowds aggregate. Counts how often each undirected edge appears
  * among the top performers, then greedily builds a tour that prefers
  * high-agreement edges, falling back to nearest neighbour when the crowd
- * offers nothing usable — the completion strategy the paper describes.
+ * offers nothing usable, the completion strategy the paper describes.
  */
 function aggregateTour(
   top: number[][],
@@ -427,7 +427,7 @@ export const ALGORITHMS: {
     name: "Nearest Neighbor",
     blurb: "Greedy construction",
     detail:
-      "Start somewhere and always hop to the closest unvisited city. It finishes in one pass and never revisits a decision, so it is fast but locks in early mistakes — the long return edge at the end is its signature. Both papers use it as a baseline and as the fallback that completes a partial tour.",
+      "Start somewhere and always hop to the closest unvisited city. It finishes in one pass and never revisits a decision, so it is fast but locks in early mistakes. The long return edge at the end is its signature. Both papers use it as a baseline and as the fallback that completes a partial tour.",
   },
   {
     key: "sa",

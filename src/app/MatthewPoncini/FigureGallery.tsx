@@ -68,7 +68,7 @@ export default function FigureGallery({
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={`${label} — figure viewer`}
+          aria-label={`${label}: figure viewer`}
           onClick={close}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
         >

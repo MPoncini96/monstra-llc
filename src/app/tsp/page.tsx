@@ -3,7 +3,7 @@ import Link from "next/link";
 import TspVisualizer from "./TspVisualizer";
 
 export const metadata: Metadata = {
-  title: "TSP Visualizer — Matthew Poncini",
+  title: "TSP Visualizer | Matthew Poncini",
   description:
     "An interactive walkthrough of four ways to attack the traveling salesman problem, drawn from two University of Louisville papers.",
 };
@@ -36,8 +36,8 @@ export default function TspPage() {
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-parchment/70">
             The traveling salesman problem asks for the shortest closed tour through every city.
-            It is NP-hard, so past a handful of cities nobody checks every tour — you pick a
-            strategy for searching well. Below are four strategies from two of my papers, running
+            It is NP-hard, so past a handful of cities nobody checks every tour. Instead you pick
+            a strategy for searching well. Below are four strategies from two of my papers, running
             live in your browser. Pick a method, press Run, and watch how it searches.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
@@ -63,11 +63,11 @@ export default function TspPage() {
           <h2 className="text-sm font-semibold text-white">What to look for</h2>
           <ul className="mt-3 space-y-2">
             {[
-              "Nearest Neighbor finishes instantly but leaves one long edge stranded at the end — it never reconsiders an early choice.",
+              "Nearest Neighbor finishes instantly but leaves one long edge stranded at the end, because it never reconsiders an early choice.",
               "Simulated Annealing looks chaotic at first. That is deliberate: a high temperature accepts worse tours so it can cross valleys, and the tour only settles as it cools.",
               "The plain Genetic Algorithm improves in visible jumps as a better tour takes over the population, then stalls once diversity is gone.",
               "GA + Wisdom of Crowds usually locks in the obvious edges sooner, because offspring inherit whatever the whole leading group agrees on rather than just two parents.",
-              "Switch the objective to the longest edge and the winning tour changes shape — it will happily add total distance to shorten its single worst hop.",
+              "Switch the objective to the longest edge and the winning tour changes shape, happily adding total distance to shorten its single worst hop.",
             ].map((t) => (
               <li key={t} className="flex gap-3 text-sm leading-relaxed text-parchment/70">
                 <span

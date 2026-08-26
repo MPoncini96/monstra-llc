@@ -16,7 +16,7 @@ const network: Site[] = [
     icon: "🤖",
     tagline: "Quantitative research and automation",
     description:
-      "The core platform. An end-to-end system for quantitative research and automated trading — data pipelines that turn raw market observations into normalized and clustered features, evaluation infrastructure for comparing models and strategies under explicit information cutoffs, and dashboards for monitoring portfolio state, algorithm behavior, and execution history. Validation runs through broker-executed paper trading, so results come from actual orders, fills, and positions.",
+      "The core platform. An end-to-end system for quantitative research and automated trading, built from data pipelines that turn raw market observations into normalized and clustered features, evaluation infrastructure for comparing models and strategies under explicit information cutoffs, and dashboards for monitoring portfolio state, algorithm behavior, and execution history. Validation runs through broker-executed paper trading, so results come from actual orders, fills, and positions.",
   },
   {
     label: "Monstra.pro",
@@ -57,7 +57,7 @@ const network: Site[] = [
     tagline: "Online education system",
     status: "In development",
     description:
-      "An online education system, and a blueprint for how future schools could be run — carrying the classroom experience behind the rest of the network into something that scales past one room. Not serving yet.",
+      "An online education system, and a blueprint for how future schools could be run. It carries the classroom experience behind the rest of the network into something that scales past one room. Not serving yet.",
   },
 ];
 
@@ -74,8 +74,9 @@ export default function Home() {
             the odd strange map.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-parchment/65">
-            Everything here is designed and operated end to end — database and backend services
-            through to the interfaces people actually use, deployment, and production monitoring.
+            Everything here is designed and operated end to end, from database and backend
+            services through to the interfaces people actually use, deployment, and production
+            monitoring.
           </p>
         </header>
 
@@ -103,7 +104,7 @@ export default function Home() {
             <p className="mt-3 text-sm leading-relaxed text-parchment/70">
               Full-stack software engineer working on AI infrastructure, data systems, and
               evaluation, with an M.S. in Computer Science and a B.S. in Applied Mathematics.
-              Portfolio, resume, and published coursework — including an interactive traveling
+              Portfolio, resume, and published coursework, including an interactive traveling
               salesman visualizer.
             </p>
             <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold">

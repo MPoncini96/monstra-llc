@@ -130,7 +130,7 @@ export default function TspVisualizer() {
     pushFrame(solver);
   };
 
-  /** Run every method to a fixed budget and tabulate — the papers' comparison table. */
+  /** Run every method to a fixed budget and tabulate, the papers' comparison table. */
   const compare = () => {
     setRunning(false);
     setResults(
@@ -304,7 +304,7 @@ export default function TspVisualizer() {
 
       {objective === "bottleneck" && (
         <p className="-mt-3 text-xs text-parchment/55">
-          <span className="font-semibold text-[#ff5d5d]">Red</span> marks the longest edge — the
+          <span className="font-semibold text-[#ff5d5d]">Red</span> marks the longest edge, the
           only edge this objective is trying to shrink.
         </p>
       )}
@@ -333,7 +333,7 @@ export default function TspVisualizer() {
       {history.length > 2 && (
         <div className="rounded-2xl border border-purple-mid/40 bg-surface p-5">
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gold">
-            Best cost over time — {view.status}
+            Best cost over time ({view.status})
           </p>
           <svg viewBox="0 0 300 60" className="block w-full" preserveAspectRatio="none">
             <polyline
@@ -356,7 +356,7 @@ export default function TspVisualizer() {
       {/* What this method does */}
       <div className="rounded-2xl border border-gold/30 bg-surface p-5">
         <p className="text-[11px] font-semibold uppercase tracking-widest text-gold">
-          {meta.name} — {meta.blurb}
+          {meta.name}: {meta.blurb}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-parchment/75">{meta.detail}</p>
       </div>
@@ -409,8 +409,8 @@ export default function TspVisualizer() {
           </div>
           <p className="mt-3 text-xs leading-relaxed text-parchment/60">
             Gold marks the winner on the objective you selected. Switching the objective often
-            changes which method wins — minimizing the longest edge is a different problem from
-            minimizing total length, which is the point of the bottleneck TSP paper.
+            changes which method wins, because minimizing the longest edge is a different
+            problem from minimizing total length. That is the point of the bottleneck TSP paper.
           </p>
         </div>
       )}

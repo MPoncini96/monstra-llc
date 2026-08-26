@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Monstra, LLC",
   description:
-    "Monstra, LLC — quantitative research tools, trading automation, and workflow documentation.",
+    "Monstra, LLC. Quantitative research tools, trading automation, and workflow documentation.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

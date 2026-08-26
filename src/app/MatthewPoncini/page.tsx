@@ -4,9 +4,9 @@ import Link from "next/link";
 import FigureGallery from "./FigureGallery";
 
 export const metadata: Metadata = {
-  title: "Matthew Poncini — Full-Stack Software Engineer",
+  title: "Matthew Poncini | Full-Stack Software Engineer",
   description:
-    "Portfolio of Matthew Poncini — full-stack software engineer working on AI infrastructure, data systems, and evaluation.",
+    "Portfolio of Matthew Poncini, a full-stack software engineer working on AI infrastructure, data systems, and evaluation.",
 };
 
 const contactLinks = [
@@ -125,7 +125,7 @@ const mlProjects = [
       },
       {
         src: "/academic/figures/forex-llm-sentiment-signals--labels.webp",
-        caption: "Reference label distribution — Neutral dominates all three pairs.",
+        caption: "Reference label distribution: Neutral dominates all three pairs.",
       },
       {
         src: "/academic/figures/forex-llm-sentiment-signals--collapse.webp",
@@ -192,7 +192,7 @@ const academicWork = [
       {
         src: "/academic/figures/tsp-ga-wisdom-of-crowds--operators.webp",
         caption:
-          "Average distance by operator — aggregate, crossover, and mutation variants.",
+          "Average distance by operator: aggregate, crossover, and mutation variants.",
       },
     ],
     code: [
@@ -216,7 +216,7 @@ const academicWork = [
       {
         src: "/academic/figures/peptide-clustering--by-source.webp",
         caption:
-          "The same projection colored by biological source shows no separation — the negative result.",
+          "The same projection colored by biological source shows no separation, which was the negative result.",
       },
       {
         src: "/academic/figures/peptide-clustering--subclusters.webp",
@@ -236,7 +236,7 @@ const academicWork = [
       {
         src: "/academic/figures/trojan-horse-classification--roc-rf.webp",
         caption:
-          "Random Forest ROC, AUC 0.767 — the strongest single classifier.",
+          "Random Forest ROC at AUC 0.767, the strongest single classifier.",
       },
       {
         src: "/academic/figures/trojan-horse-classification--roc-ensemble.webp",
