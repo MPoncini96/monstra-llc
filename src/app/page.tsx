@@ -1,9 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Site = {
   label: string;
   href: string;
+  /** Emoji fallback, used when the site has no logo image. */
   icon: string;
+  /** Square logo in /public, preferred over the emoji when present. */
+  iconSrc?: string;
   tagline: string;
   description: string;
   status?: string;
@@ -14,6 +18,7 @@ const network: Site[] = [
     label: "Monstra.bot",
     href: "https://monstra.bot",
     icon: "🤖",
+    iconSrc: "/Monstrabot.webp",
     tagline: "Quantitative research and automation",
     description:
       "The core platform. An end-to-end system for quantitative research and automated trading, built from data pipelines that turn raw market observations into normalized and clustered features, evaluation infrastructure for comparing models and strategies under explicit information cutoffs, and dashboards for monitoring portfolio state, algorithm behavior, and execution history. Validation runs through broker-executed paper trading, so results come from actual orders, fills, and positions.",
@@ -22,6 +27,7 @@ const network: Site[] = [
     label: "Monstra.pro",
     href: "https://monstra.pro",
     icon: "⚡",
+    iconSrc: "/monstra-pro-box.webp",
     tagline: "The Monstra Pro Box",
     description:
       "A dedicated device that runs your Monstra bots locally and trades on your own Alpaca account. Execution stays on hardware you control rather than someone else's server, with a display for real-time portfolio performance and trade activity.",
@@ -120,10 +126,20 @@ export default function Home() {
             {network.map((site) => {
               const body = (
                 <>
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span aria-hidden className="text-2xl">
-                      {site.icon}
-                    </span>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    {site.iconSrc ? (
+                      <Image
+                        src={site.iconSrc}
+                        alt=""
+                        width={96}
+                        height={96}
+                        className="h-14 w-14 shrink-0 rounded-lg object-contain"
+                      />
+                    ) : (
+                      <span aria-hidden className="text-2xl">
+                        {site.icon}
+                      </span>
+                    )}
                     <span
                       className={`text-lg font-semibold text-parchment ${
                         site.status ? "" : "group-hover:text-gold"

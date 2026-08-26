@@ -21,12 +21,14 @@ const projectLinks = [
     label: "Monstra.bot",
     href: "https://monstra.bot",
     icon: "🤖",
+    iconSrc: "/Monstrabot.webp",
     tag: "Quantitative research & automation",
   },
   {
     label: "Monstra.pro",
     href: "https://monstra.pro",
     icon: "⚡",
+    iconSrc: "/monstra-pro-box.webp",
     tag: "Local trading hardware",
   },
   {
@@ -558,7 +560,7 @@ export default function Home() {
         <section className="mt-14">
           <SectionHeading>Projects</SectionHeading>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {projectLinks.map(({ label, href, icon, tag }) => (
+            {projectLinks.map(({ label, href, icon, iconSrc, tag }) => (
               <a
                 key={href}
                 href={href}
@@ -566,7 +568,19 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-purple-mid/40 bg-surface px-5 py-7 text-center transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
               >
-                <span className="text-3xl">{icon}</span>
+                {iconSrc ? (
+                  <Image
+                    src={iconSrc}
+                    alt=""
+                    width={96}
+                    height={96}
+                    className="h-14 w-14 rounded-lg object-contain"
+                  />
+                ) : (
+                  <span aria-hidden className="flex h-14 w-14 items-center justify-center text-3xl">
+                    {icon}
+                  </span>
+                )}
                 <span className="text-sm font-semibold text-parchment">{label}</span>
                 <span className="text-[11px] leading-snug text-gold-soft/80">{tag}</span>
               </a>
