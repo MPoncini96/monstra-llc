@@ -35,6 +35,7 @@ const projectLinks = [
     label: "hexww2.world",
     href: "https://hexww2.world",
     icon: "🌍",
+    iconSrc: "/logo2.webp",
     tag: "Earth on a hex globe",
   },
   {

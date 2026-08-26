@@ -52,6 +52,7 @@ const network: Site[] = [
     label: "hexww2.world",
     href: "https://hexww2.world",
     icon: "🌍",
+    iconSrc: "/logo2.webp",
     tagline: "Earth on a Hex Globe",
     description:
       "A World War II strategy world built on a hex-tiled globe, so the whole Earth is one continuous playable grid rather than a flat map with distorted edges.",
