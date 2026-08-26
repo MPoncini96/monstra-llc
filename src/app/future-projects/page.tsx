@@ -2,24 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Future Projects — Matthew Poncini",
+  title: "Future Projects — Monstra, LLC",
   description: "Projects in progress across the Monstra network.",
 };
 
 const futureProjects = [
   {
-    label: "Monstra.guide",
-    href: "https://monstra.guide",
-    icon: "🧭",
-    tag: "Resources",
-    blurb: "A guided resource hub for navigating the tools and workflows in the Monstra network.",
-  },
-  {
     label: "Monstra.study",
     href: "https://monstra.study",
     icon: "📚",
     tag: "Learning",
-    blurb: "Learning surfaces for mathematics, statistics, and applied machine learning.",
+    blurb:
+      "Learning surfaces for mathematics, statistics, and applied machine learning, built on the teaching approach behind the rest of the network. Still in development — the domain is not serving yet.",
   },
 ];
 
@@ -31,7 +25,7 @@ export default function FutureProjects() {
           href="/"
           className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-parchment/50 transition-colors hover:text-gold"
         >
-          <span aria-hidden>←</span> Back to portfolio
+          <span aria-hidden>←</span> Back to Monstra
         </Link>
 
         <header className="mt-8">
@@ -44,7 +38,7 @@ export default function FutureProjects() {
           </p>
         </header>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-4">
           {futureProjects.map(({ label, href, icon, tag, blurb }) => (
             <a
               key={href}

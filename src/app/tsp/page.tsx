@@ -24,7 +24,7 @@ export default function TspPage() {
     <main className="min-h-screen bg-ink px-6 py-16">
       <div className="mx-auto w-full max-w-3xl">
         <Link
-          href="/"
+          href="/MatthewPoncini"
           className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-parchment/50 transition-colors hover:text-gold"
         >
           <span aria-hidden>←</span> Back to portfolio

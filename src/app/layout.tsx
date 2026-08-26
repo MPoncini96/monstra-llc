@@ -3,9 +3,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Matthew Poncini — Full-Stack Software Engineer",
+  title: "Monstra, LLC",
   description:
-    "Portfolio of Matthew Poncini — full-stack software engineer working on AI infrastructure, data systems, and evaluation.",
+    "Monstra, LLC — quantitative research tools, trading automation, and workflow documentation.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -20,12 +20,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             >
               <span className="text-gold">Monstra</span>, LLC
             </Link>
-            <Link
-              href="/future-projects"
-              className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
-            >
-              Future Projects
-            </Link>
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <Link
+                href="/MatthewPoncini"
+                className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
+              >
+                Portfolio
+              </Link>
+              <Link
+                href="/future-projects"
+                className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
+              >
+                Future Projects
+              </Link>
+            </nav>
           </div>
         </header>
         {children}
