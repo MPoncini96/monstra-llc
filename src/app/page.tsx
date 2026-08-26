@@ -196,30 +196,6 @@ const academicWork = [
     ],
   },
   {
-    title: "Genetics and Wisdom of Crowds Hybrid Algorithm for Open Shop Scheduling",
-    course: "CSE 545: Artificial Intelligence",
-    term: "Fall 2025",
-    summary:
-      "Combined five independently evolving genetic-algorithm populations through a Wisdom of Crowds aggregation step to solve open-shop scheduling problems, then measured the effect on solution quality.",
-    paper: "/academic/open-shop-scheduling-ga-woc.pdf",
-    code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
-    figures: [
-      {
-        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-15x10.webp",
-        caption: "Resulting schedule for 15 jobs across 10 machines, makespan 4591.",
-      },
-      {
-        src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-10x10.webp",
-        caption: "A 10-job, 10-machine schedule with makespan 370.",
-      },
-      {
-        src: "/academic/figures/open-shop-scheduling-ga-woc--pipeline.webp",
-        caption:
-          "Each generation blends clones, experts, and three Wisdom of Crowds consensus crossovers.",
-      },
-    ],
-  },
-  {
     title: "Genetics and Wisdom of Crowds Hybrid Algorithm for the Traveling Salesman Problem",
     course: "CSE 545: Artificial Intelligence",
     term: "Fall 2025",
