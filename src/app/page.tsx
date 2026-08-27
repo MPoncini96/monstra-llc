@@ -70,6 +70,27 @@ const network: Site[] = [
   },
 ];
 
+const contacts = [
+  {
+    label: "Email",
+    value: "MPoncini@monstra.bot",
+    href: "mailto:MPoncini@monstra.bot",
+    icon: "✉️",
+  },
+  {
+    label: "GitHub",
+    value: "MPoncini96",
+    href: "https://github.com/MPoncini96",
+    icon: "🐙",
+  },
+  {
+    label: "LinkedIn",
+    value: "matt-poncini",
+    href: "https://www.linkedin.com/in/matt-poncini",
+    icon: "💼",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-ink px-6 py-16">
@@ -193,6 +214,31 @@ export default function Home() {
                 </a>
               );
             })}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
+            Contact
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {contacts.map(({ label, value, href, icon }) => (
+              <a
+                key={href}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group flex flex-col gap-1 rounded-2xl border border-purple-mid/40 bg-surface px-5 py-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
+              >
+                <span className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-gold-soft/80">
+                  <span aria-hidden>{icon}</span>
+                  {label}
+                </span>
+                <span className="break-all text-sm font-semibold text-parchment group-hover:text-gold">
+                  {value}
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
