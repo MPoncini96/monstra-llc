@@ -103,6 +103,12 @@ const mlProjects = [
     title: "Fine-Tuning LLaMA-2-7B with QLoRA",
     year: "2025",
     paper: "/academic/qlora-finetuning-llama2.pdf",
+    code: [
+      {
+        label: "Repository",
+        href: "https://github.com/MPoncini96/QLoRA-FineTuning-Llama2-Finance-Alpaca",
+      },
+    ],
     figures: [
       {
         src: "/academic/figures/qlora-finetuning-llama2--rouge.webp",
@@ -149,7 +155,12 @@ const mlProjects = [
     title: "Open Shop Scheduling with Wisdom of Crowds",
     year: "2025",
     paper: "/academic/open-shop-scheduling-ga-woc.pdf",
-    code: [{ label: "Code", href: "/academic/open-shop-scheduling-ga-woc.ipynb" }],
+    code: [
+      {
+        label: "Repository",
+        href: "https://github.com/MPoncini96/OSSP-Scheduler-WoC-GA-Hybrid",
+      },
+    ],
     figures: [
       {
         src: "/academic/figures/open-shop-scheduling-ga-woc--gantt-15x10.webp",
@@ -199,10 +210,6 @@ const academicWork = [
           "Average distance by operator: aggregate, crossover, and mutation variants.",
       },
     ],
-    code: [
-      { label: "Algorithm", href: "/academic/tsp-ga-wisdom-of-crowds.ipynb" },
-      { label: "Driver", href: "/academic/tsp-ga-wisdom-of-crowds-main.ipynb" },
-    ],
   },
   {
     title: "Unsupervised Clustering and Pattern Recognition of a 9-mer Peptide Dataset",
@@ -211,6 +218,12 @@ const academicWork = [
     summary:
       "Clustered one million 9-mer peptides drawn from human, viral, bacterial, and cancer sources using HDBSCAN and UMAP. Found clear physicochemical structure, but none of the 229 engineered features could reliably recover a peptide's biological origin.",
     paper: "/academic/peptide-clustering.pdf",
+    code: [
+      {
+        label: "Repository",
+        href: "https://github.com/MPoncini96/Peptide-Unsupervised-Clustering-with-UMAP-and-HDBSCAN",
+      },
+    ],
     figures: [
       {
         src: "/academic/figures/peptide-clustering--clusters.webp",
@@ -253,7 +266,12 @@ const academicWork = [
           "PCA cumulative variance across the 85 flow features.",
       },
     ],
-    code: [{ label: "Code", href: "/academic/trojan-horse-classification.ipynb" }],
+    code: [
+      {
+        label: "Repository",
+        href: "https://github.com/MPoncini96/Supervised-Learning-Trojan-Horse-Data",
+      },
+    ],
   },
   {
     title:
@@ -263,6 +281,12 @@ const academicWork = [
     summary:
       "Surveyed exact and approximate approaches to the bottleneck TSP, then compared simulated annealing against niching genetic algorithms on an objective whose landscape is dominated by plateaus.",
     paper: "/academic/bottleneck-tsp-sa-niching-ga.pdf",
+    code: [
+      {
+        label: "Repository",
+        href: "https://github.com/MPoncini96/Bottleneck-TSP-Solutions-with-SA-and-Niching-GA-and-a-LKH-Baseline",
+      },
+    ],
     figures: [
       {
         src: "/academic/figures/bottleneck-tsp-sa-niching-ga--bottleneck.webp",

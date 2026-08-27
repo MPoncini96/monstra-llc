@@ -46,9 +46,9 @@ const network: Site[] = [
     href: "https://monstra.study",
     icon: "📚",
     iconSrc: "/monstra-study.webp",
-    tagline: "Online education system",
+    tagline: "How I would run a school",
     description:
-      "An online education system, and a blueprint for how future schools could be run. It carries the classroom experience behind the rest of the network into something that scales past one room.",
+      "A blueprint for how I would run a school, built out as a working site rather than written up as a document. It takes what I learned teaching mathematics and computer science and turns it into a concrete plan for how a school could be structured.",
   },
   {
     label: "hexww2.world",
