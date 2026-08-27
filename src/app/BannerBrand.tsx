@@ -30,7 +30,7 @@ export default function BannerBrand() {
         scrolled ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
       }`}
     >
-      <span className="text-gold">Monstra</span>, LLC
+      <span className="text-gold">Monstra</span>
     </Link>
   );
 }

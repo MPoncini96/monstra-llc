@@ -4,9 +4,9 @@ import BannerBrand from "./BannerBrand";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Monstra, LLC",
+  title: "Monstra",
   description:
-    "Monstra, LLC. Quantitative research tools, trading automation, and workflow documentation.",
+    "Matthew Poncini's open-source research project. Quantitative research tools, trading automation, workflow documentation, and the papers behind them.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

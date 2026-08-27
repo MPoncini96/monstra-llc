@@ -70,6 +70,40 @@ const network: Site[] = [
   },
 ];
 
+/** Public repositories on github.com/MPoncini96. */
+const repos = [
+  { name: "MonstraGuide", note: "The workflow documentation platform", lang: "TypeScript" },
+  { name: "MonstraPro", note: "Software for the Pro Box device", lang: "Python" },
+  { name: "study", note: "The Monstra.study concept site", lang: "JavaScript" },
+  { name: "MonstraBackfill", note: "Historical market data backfill", lang: "Python" },
+  { name: "monstra-llc", note: "This site", lang: "TypeScript" },
+  {
+    name: "QLoRA-FineTuning-Llama2-Finance-Alpaca",
+    note: "Paper: fine-tuning LLaMA-2 on financial QA",
+    lang: "Jupyter",
+  },
+  {
+    name: "OSSP-Scheduler-WoC-GA-Hybrid",
+    note: "Paper: open shop scheduling with Wisdom of Crowds",
+    lang: "Jupyter",
+  },
+  {
+    name: "Bottleneck-TSP-Solutions-with-SA-and-Niching-GA-and-a-LKH-Baseline",
+    note: "Paper: simulated annealing and niching GAs",
+    lang: "Jupyter",
+  },
+  {
+    name: "Peptide-Unsupervised-Clustering-with-UMAP-and-HDBSCAN",
+    note: "Paper: 9-mer peptide clustering",
+    lang: "Jupyter",
+  },
+  {
+    name: "Supervised-Learning-Trojan-Horse-Data",
+    note: "Paper: Trojan horse traffic classification",
+    lang: "Jupyter",
+  },
+];
+
 const contacts = [
   {
     label: "Email",
@@ -98,23 +132,24 @@ export default function Home() {
         {/* Intro and founder sit side by side on wide screens, stacked on mobile. */}
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-8">
           <header>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              <span className="text-gold">Monstra</span>, LLC
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              <span className="text-gold">Monstra</span>
             </h1>
             <p className="mt-4 text-base leading-relaxed text-parchment/80">
-              A small software company building quantitative research tools, trading automation,
-              and the odd strange map.
+              My open-source research project. I use it to work through problems in quantitative
+              research, optimization, and applied machine learning, then ship the result as
+              something you can actually use and read the source of.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-parchment/65">
-              Everything here is designed and operated end to end, from database and backend
-              services through to the interfaces people actually use, deployment, and production
-              monitoring.
+              Each project is built end to end, from database and backend services through to the
+              interfaces people use, deployment, and production monitoring. The code is public, and
+              the research behind it is written up and published.
             </p>
           </header>
 
           <section>
             <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gold">
-              Who Runs It
+              Built By
             </h2>
             <Link
               href="/MatthewPoncini"
@@ -152,7 +187,7 @@ export default function Home() {
 
         <section className="mt-14">
           <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
-            The Network
+            Projects
           </h2>
           <div className="space-y-4">
             {network.map((site) => {
@@ -214,6 +249,43 @@ export default function Home() {
                 </a>
               );
             })}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-2 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
+            Open Source
+          </h2>
+          <p className="mb-6 text-sm leading-relaxed text-parchment/70">
+            The code behind the sites, and the notebooks behind each research paper, are public on{" "}
+            <a
+              href="https://github.com/MPoncini96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-gold underline underline-offset-2 hover:text-gold-soft"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {repos.map(({ name, note, lang }) => (
+              <a
+                key={name}
+                href={`https://github.com/MPoncini96/${name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-purple-mid/40 bg-surface px-4 py-3 transition-all duration-200 hover:border-gold/60 hover:bg-surface-2"
+              >
+                <span className="block break-words font-mono text-xs font-semibold text-parchment group-hover:text-gold">
+                  {name}
+                </span>
+                <span className="mt-1 block text-[11px] leading-snug text-parchment/60">
+                  {note}
+                  <span className="text-gold-soft/70"> · {lang}</span>
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
