@@ -414,7 +414,7 @@ const additionalExperience = [
     role: "Staff Sergeant, 94H Test, Measurement, and Diagnostic Equipment Specialist",
     org: "U.S. Army National Guard",
     location: "",
-    dates: "May 2019–May 2026",
+    dates: "May 2019–May 2025",
     bullets: [
       "Led technical personnel supporting more than $10 million in precision test and calibration equipment; diagnosed complex system failures through structured testing, validation, troubleshooting, and root-cause analysis.",
       "Managed technical workflows, documentation, accountability, and competing operational priorities in a high-reliability environment.",
