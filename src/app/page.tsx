@@ -26,11 +26,11 @@ const network: Site[] = [
   {
     label: "Monstra.pro",
     href: "https://monstra.pro",
-    icon: "⚡",
-    iconSrc: "/monstra-pro-box.webp",
-    tagline: "The Monstra Pro Box",
+    icon: "📈",
+    tagline: "Automated investment advisory",
     description:
-      "A dedicated device that runs your Monstra bots locally and trades on your own Alpaca account. Execution stays on hardware you control rather than someone else's server, with a display for real-time portfolio performance and trade activity.",
+      "What I am working on now. The goal is a robo-advisor that manages client portfolios with the strategies developed on Monstra.bot, operating as an SEC-registered investment adviser with Interactive Brokers as custodian, so client assets are held at the broker rather than by Monstra. None of that is in place yet: Monstra is not currently registered, no advisory services are being offered, and the domain does not host a site yet.",
+    status: "In development",
   },
   {
     label: "Monstra.guide",
