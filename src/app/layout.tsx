@@ -17,7 +17,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-5">
             <BannerBrand />
             <Link
-              href="/MatthewPoncini"
+              href="/AboutMe"
               className="text-xs font-semibold uppercase tracking-widest text-gold-soft/75 transition-colors hover:text-gold"
             >
               Portfolio

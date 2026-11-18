@@ -152,7 +152,7 @@ export default function Home() {
               Built By
             </h2>
             <Link
-              href="/MatthewPoncini"
+              href="/AboutMe"
               className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
             >
               <div className="flex items-center gap-3">
