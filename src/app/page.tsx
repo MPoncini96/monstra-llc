@@ -13,7 +13,7 @@ type Site = {
   status?: string;
 };
 
-const network: Site[] = [
+const projects: Site[] = [
   {
     label: "Monstra.bot",
     href: "https://monstra.bot",
@@ -21,34 +21,23 @@ const network: Site[] = [
     iconSrc: "/Monstrabot.webp",
     tagline: "Quantitative research and automation",
     description:
-      "The core platform. An end-to-end system for quantitative research and automated trading, built from data pipelines that turn raw market observations into normalized and clustered features, evaluation infrastructure for comparing models and strategies under explicit information cutoffs, and dashboards for monitoring portfolio state, algorithm behavior, and execution history. Validation runs through broker-executed paper trading, so results come from actual orders, fills, and positions.",
+      "An end-to-end system for quantitative research and automated trading, built from data pipelines that turn raw market observations into normalized and clustered features, evaluation infrastructure for comparing models and strategies under explicit information cutoffs, and dashboards for monitoring portfolio state, algorithm behavior, and execution history. Validation runs through broker-executed paper trading, so results come from actual orders, fills, and positions.",
   },
   {
-    label: "Monstra.pro",
-    href: "https://monstra.pro",
-    icon: "📈",
-    tagline: "Automated investment advisory",
+    label: "0to1evo.xyz",
+    href: "https://0to1evo.xyz",
+    icon: "🧬",
+    tagline: "Evolving 0DTE and 1DTE options strategies",
     description:
-      "What I am working on now. The goal is a robo-advisor that manages client portfolios with the strategies developed on Monstra.bot, operating as an SEC-registered investment adviser with Interactive Brokers as custodian, so client assets are held at the broker rather than by Monstra. None of that is in place yet: Monstra is not currently registered, no advisory services are being offered, and the domain does not host a site yet.",
-    status: "In development",
+      "A public genetic algorithm experiment on 0DTE and 1DTE options trading strategies. A population of a few hundred rule-based strategies (long calls and puts, credit spreads, and iron condors) trades on simulated fills each session; strategies are scored on their return since birth, then bred, cloned, or removed. Everything is out in the open: the full strategy list, family trees, a daily session log, \"fossils\" that freeze each week's leaders to test whether selection keeps working, and a comparison against a fixed iron condor baseline and a random control. An educational simulation, not investment advice.",
   },
   {
-    label: "Monstra.guide",
-    href: "https://monstra.guide",
-    icon: "🧭",
-    iconSrc: "/monstraguide.webp",
-    tagline: "Turn everyday work into a living AI textbook",
+    label: "209adus.com",
+    href: "https://www.209adus.com",
+    icon: "🏡",
+    tagline: "Valley ADU Studio",
     description:
-      "A workflow documentation platform. Senior staff record themselves doing a task, and those recordings become interactive step-by-step guides with screenshots and explanations for training and onboarding. Recording state stays visible, guides pass through human review, and sensitive applications or screenshots can be excluded before anything becomes shared knowledge.",
-  },
-  {
-    label: "Monstra.study",
-    href: "https://monstra.study",
-    icon: "📚",
-    iconSrc: "/monstra-study.webp",
-    tagline: "How I would run a school",
-    description:
-      "A blueprint for how I would run a school, built out as a working site rather than written up as a document. It takes what I learned teaching mathematics and computer science and turns it into a concrete plan for how a school could be structured.",
+      "A site for Valley ADU Studio, which designs and builds backyard ADUs, garage conversions, and farm worker housing along Highway 99 from Lodi to Fresno. Homeowners enter their address and drop a floor plan onto their own lot in a 3D visualizer to see how it fits next to the house and property line, walk through each furnished plan in 3D, and request a free consultation and quote.",
   },
   {
     label: "hexww2.world",
@@ -59,14 +48,34 @@ const network: Site[] = [
     description:
       "A World War II strategy world built on a hex-tiled globe, so the whole Earth is one continuous playable grid rather than a flat map with distorted edges.",
   },
+];
+
+const sideProjects: Site[] = [
+  {
+    label: "Monstra.pro",
+    href: "https://monstra.pro",
+    icon: "📈",
+    tagline: "Robo-advisor plans",
+    description:
+      "Plans for a robo investment adviser that would manage client portfolios with the strategies developed on Monstra.bot. Nothing is in place yet: Monstra is not a registered investment adviser, no advisory services are offered, and the domain does not host a site.",
+    status: "Planned",
+  },
+  {
+    label: "January Fitness Cup",
+    href: "https://fitness-cup-71zl.vercel.app",
+    icon: "🏆",
+    tagline: "A month-long race with friends",
+    description:
+      "A January fitness competition for a group of friends. Everyone logs workouts, golf rounds, and lifting sessions to earn points, and a live scoreboard and game board track who is ahead.",
+  },
   {
     label: "park-quest.buzz",
-    href: "https://park-quest.buzz",
+    href: "https://www.park-quest.buzz",
     icon: "📸",
     iconSrc: "/parkquest.webp",
-    tagline: "14 photo challenges, one phone each",
+    tagline: "15 photo challenges, one phone each",
     description:
-      "A photo scavenger hunt built for groups outdoors. Everyone brings a phone, works through fourteen photo challenges, and either joins someone else's hunt with a code or sets up a new one.",
+      "A photo scavenger hunt built for groups outdoors. Everyone brings a phone, works through fifteen photo challenges, and either joins someone else's hunt with a code or sets up a new one.",
   },
 ];
 
@@ -125,31 +134,100 @@ const contacts = [
   },
 ];
 
+function ProjectList({ title, sites }: { title: string; sites: Site[] }) {
+  return (
+    <section className="mt-14">
+      <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
+        {title}
+      </h2>
+      <div className="space-y-4">
+        {sites.map((site) => {
+          const body = (
+            <>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                {site.iconSrc ? (
+                  <Image
+                    src={site.iconSrc}
+                    alt=""
+                    width={96}
+                    height={96}
+                    className="h-14 w-14 shrink-0 rounded-lg object-contain"
+                  />
+                ) : (
+                  <span aria-hidden className="text-2xl">
+                    {site.icon}
+                  </span>
+                )}
+                <span
+                  className={`text-lg font-semibold text-parchment ${
+                    site.status ? "" : "group-hover:text-gold"
+                  }`}
+                >
+                  {site.label}
+                </span>
+                <span className="text-[11px] uppercase tracking-widest text-gold-soft/80">
+                  {site.tagline}
+                </span>
+                {site.status && (
+                  <span className="rounded-full border border-dashed border-gold/45 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-gold-soft/85">
+                    {site.status}
+                  </span>
+                )}
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-parchment/70">{site.description}</p>
+            </>
+          );
+
+          // Planned sites have no page to send anyone to yet.
+          return site.status ? (
+            <div
+              key={site.href}
+              className="rounded-2xl border border-dashed border-purple-mid/40 bg-surface/60 p-6"
+            >
+              {body}
+            </div>
+          ) : (
+            <a
+              key={site.href}
+              href={site.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
+            >
+              {body}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-ink px-6 py-16">
       <div className="mx-auto w-full max-w-3xl">
-        {/* Intro and founder sit side by side on wide screens, stacked on mobile. */}
+        {/* Intro and about card sit side by side on wide screens, stacked on mobile. */}
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-8">
           <header>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              <span className="text-gold">Monstra</span>
+              <span className="text-gold">Matthew Poncini</span>
             </h1>
             <p className="mt-4 text-base leading-relaxed text-parchment/80">
-              My open-source research project. I use it to work through problems in quantitative
-              research, optimization, and applied machine learning, then ship the result as
-              something you can actually use and read the source of.
+              Full-stack software engineer working on AI infrastructure, data systems, and
+              evaluation. I build things end to end, from databases and backend services through to
+              the interfaces people use, deployment, and production monitoring.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-parchment/65">
-              Each project is built end to end, from database and backend services through to the
-              interfaces people use, deployment, and production monitoring. The code is public, and
-              the research behind it is written up and published.
+              Below are the projects I am building now, from quantitative trading research to
+              software for a Central Valley ADU builder, plus a few side projects made for friends
+              and family.
             </p>
           </header>
 
           <section>
             <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gold">
-              Built By
+              About Me
             </h2>
             <Link
               href="/AboutMe"
@@ -165,17 +243,15 @@ export default function Home() {
                 />
                 <div>
                   <span className="block text-lg font-semibold text-parchment group-hover:text-gold">
-                    Matthew Poncini
+                    Portfolio and resume
                   </span>
                   <span className="text-[11px] uppercase tracking-widest text-gold-soft/80">
-                    Founder
+                    M.S. Computer Science · B.S. Applied Mathematics
                   </span>
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-parchment/70">
-                Full-stack software engineer working on AI infrastructure, data systems, and
-                evaluation, with an M.S. in Computer Science and a B.S. in Applied Mathematics.
-                Portfolio, resume, and published coursework, including an interactive traveling
+                Background, resume, and published coursework, including an interactive traveling
                 salesman visualizer.
               </p>
               <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold">
@@ -185,72 +261,8 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="mt-14">
-          <h2 className="mb-6 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
-            Projects
-          </h2>
-          <div className="space-y-4">
-            {network.map((site) => {
-              const body = (
-                <>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    {site.iconSrc ? (
-                      <Image
-                        src={site.iconSrc}
-                        alt=""
-                        width={96}
-                        height={96}
-                        className="h-14 w-14 shrink-0 rounded-lg object-contain"
-                      />
-                    ) : (
-                      <span aria-hidden className="text-2xl">
-                        {site.icon}
-                      </span>
-                    )}
-                    <span
-                      className={`text-lg font-semibold text-parchment ${
-                        site.status ? "" : "group-hover:text-gold"
-                      }`}
-                    >
-                      {site.label}
-                    </span>
-                    <span className="text-[11px] uppercase tracking-widest text-gold-soft/80">
-                      {site.tagline}
-                    </span>
-                    {site.status && (
-                      <span className="rounded-full border border-dashed border-gold/45 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-gold-soft/85">
-                        {site.status}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-parchment/70">
-                    {site.description}
-                  </p>
-                </>
-              );
-
-              // Sites still in development have no page to send anyone to yet.
-              return site.status ? (
-                <div
-                  key={site.href}
-                  className="rounded-2xl border border-dashed border-purple-mid/40 bg-surface/60 p-6"
-                >
-                  {body}
-                </div>
-              ) : (
-                <a
-                  key={site.href}
-                  href={site.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block rounded-2xl border border-purple-mid/40 bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-gold/60 hover:bg-surface-2 hover:shadow-[0_12px_40px_rgba(42,18,80,0.7)]"
-                >
-                  {body}
-                </a>
-              );
-            })}
-          </div>
-        </section>
+        <ProjectList title="Projects" sites={projects} />
+        <ProjectList title="Side Projects" sites={sideProjects} />
 
         <section className="mt-14">
           <h2 className="mb-2 border-b border-gold/30 pb-2 text-xl font-semibold tracking-tight text-white">
@@ -315,7 +327,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-16 border-t border-purple-mid/40 pt-6 text-center text-xs tracking-wide text-parchment/35">
-          © {new Date().getFullYear()} Monstra LLC
+          © {new Date().getFullYear()} Matthew Poncini
         </footer>
       </div>
     </main>

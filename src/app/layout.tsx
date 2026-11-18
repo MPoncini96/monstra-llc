@@ -4,9 +4,9 @@ import BannerBrand from "./BannerBrand";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Monstra",
+  title: "Matthew Poncini",
   description:
-    "Matthew Poncini's open-source research project. Quantitative research tools, trading automation, workflow documentation, and the papers behind them.",
+    "Matthew Poncini, full-stack software engineer. Projects in quantitative trading research, genetic algorithms, 3D home visualization, and games, plus published research papers.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
