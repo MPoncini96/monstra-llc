@@ -24,10 +24,10 @@ export default function TspPage() {
     <main className="min-h-screen bg-ink px-6 py-16">
       <div className="mx-auto w-full max-w-3xl">
         <Link
-          href="/AboutMe"
+          href="/#research"
           className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-parchment/50 transition-colors hover:text-gold"
         >
-          <span aria-hidden>←</span> Back to portfolio
+          <span aria-hidden>←</span> Back to research
         </Link>
 
         <header className="mt-8">
@@ -85,7 +85,7 @@ export default function TspPage() {
         </section>
 
         <footer className="mt-16 border-t border-purple-mid/40 pt-6 text-center text-xs tracking-wide text-parchment/35">
-          © {new Date().getFullYear()} Monstra LLC
+          © {new Date().getFullYear()} Matthew Poncini
         </footer>
       </div>
     </main>

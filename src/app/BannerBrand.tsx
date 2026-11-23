@@ -26,11 +26,13 @@ export default function BannerBrand() {
       href="/"
       aria-hidden={!scrolled}
       tabIndex={scrolled ? undefined : -1}
-      className={`text-3xl font-bold tracking-tight text-white transition-all duration-300 sm:text-4xl ${
+      className={`shrink-0 text-lg font-bold tracking-tight text-white transition-all duration-300 sm:text-2xl ${
         scrolled ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
       }`}
     >
-      <span className="text-gold">Matthew Poncini</span>
+      {/* Initials on phones so the section links fit on one line. */}
+      <span className="text-gold sm:hidden">MP</span>
+      <span className="hidden text-gold sm:inline">Matthew Poncini</span>
     </Link>
   );
 }
