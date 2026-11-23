@@ -116,8 +116,8 @@ const repos = [
 const contacts = [
   {
     label: "Email",
-    value: "MPoncini@monstra.bot",
-    href: "mailto:MPoncini@monstra.bot",
+    value: "Matt@MJPoncini.com",
+    href: "mailto:Matt@MJPoncini.com",
     icon: "✉️",
   },
   {

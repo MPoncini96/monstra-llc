@@ -13,7 +13,7 @@ const contactLinks = [
   { label: "Resume", href: "/PonciniResume.pdf", icon: "📄" },
   { label: "GitHub", href: "https://github.com/MPoncini96", icon: "🐙" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/matt-poncini", icon: "💼" },
-  { label: "Email", href: "mailto:MJPon8896@gmail.com", icon: "✉️" },
+  { label: "Email", href: "mailto:Matt@MJPoncini.com", icon: "✉️" },
 ];
 
 const projectLinks = [
