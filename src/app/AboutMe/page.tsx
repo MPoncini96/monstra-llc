@@ -411,16 +411,6 @@ const academicWork = [
 
 const additionalExperience = [
   {
-    role: "Staff Sergeant, 94H Test, Measurement, and Diagnostic Equipment Specialist",
-    org: "U.S. Army National Guard",
-    location: "",
-    dates: "May 2019–May 2025",
-    bullets: [
-      "Led technical personnel supporting more than $10 million in precision test and calibration equipment; diagnosed complex system failures through structured testing, validation, troubleshooting, and root-cause analysis.",
-      "Managed technical workflows, documentation, accountability, and competing operational priorities in a high-reliability environment.",
-    ],
-  },
-  {
     role: "Mathematics and Computer Science Teacher",
     org: "ICA Cristo Rey",
     location: "San Francisco, CA",
@@ -438,6 +428,40 @@ const additionalExperience = [
     bullets: [
       "Supported pricing and retention research using SAS, statistical analysis, quantitative modeling, data validation, and business-impact analysis.",
     ],
+  },
+];
+
+const veteranService = {
+  role: "Staff Sergeant, 94H Test, Measurement, and Diagnostic Equipment (TMDE) Maintenance Support Specialist",
+  org: "California Army National Guard",
+  unit: "Co B, 746th CSSB (formerly 118th Support Maintenance Company), Stockton, CA",
+  dates: "May 2019–May 2025 · Honorable discharge",
+  bullets: [
+    "Enlisted as a Specialist; promoted to Sergeant (Oct 2022) and Staff Sergeant (Jul 2024). Served as Team Chief leading 5–7 calibration technicians from Dec 2024.",
+    "Deployed to Camp Arifjan, Kuwait, in support of Operation Spartan Shield (Nov 2023–May 2024) as Calibrations Team Chief.",
+    "Calibrated more than 430 pieces of equipment across 440+ labor hours, and supported other sections at Camp Buehring with problems others couldn't solve.",
+    "Built new lab procedures that raised section productivity 12% and cut calibration turnaround time from a 60-day average to 14 days.",
+    "Ran a full inventory of the calibration set and 705 trailer, separating organic from theater-provided equipment to simplify the hand-off to the incoming unit.",
+    "Volunteered to tutor 44 service members in math and English to raise their GT scores.",
+    "Led technical personnel supporting more than $10 million in precision test and calibration equipment, diagnosing complex failures through structured testing and root-cause analysis.",
+  ],
+};
+
+const veteranHonors = [
+  {
+    title: "Army Commendation Medal",
+    detail: "Meritorious service as Calibrations Team Chief, Operation Spartan Shield, Kuwait",
+    date: "Nov 2023–May 2024",
+  },
+  {
+    title: "Honor Graduate",
+    detail: "94H TMDE Maintenance Support Specialist course (34 weeks), U.S. Army Ordnance School",
+    date: "Sep 2020",
+  },
+  {
+    title: "Basic Leader Course (BLC)",
+    detail: "Graduate",
+    date: "May 2023",
   },
 ];
 
@@ -726,6 +750,36 @@ export default function Home() {
                 </div>
                 <Bullets items={bullets} />
               </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Veteran */}
+        <section className="mt-14">
+          <SectionHeading>Veteran</SectionHeading>
+          <article>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 className="text-base font-semibold text-white">{veteranService.role}</h3>
+              <span className="text-sm font-semibold text-gold">{veteranService.org}</span>
+            </div>
+            <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 text-xs text-parchment/50">
+              <span>{veteranService.unit}</span>
+              <span>{veteranService.dates}</span>
+            </div>
+            <Bullets items={veteranService.bullets} />
+          </article>
+          <h3 className="mt-8 mb-3 text-sm font-semibold uppercase tracking-wider text-gold">
+            Awards and Military Education
+          </h3>
+          <div className="space-y-4">
+            {veteranHonors.map(({ title, detail, date }) => (
+              <div key={title}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                  <p className="text-sm font-semibold text-parchment">{title}</p>
+                  <span className="text-xs text-parchment/50">{date}</span>
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-parchment/70">{detail}</p>
+              </div>
             ))}
           </div>
         </section>
