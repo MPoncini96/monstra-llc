@@ -16,21 +16,23 @@ const contactLinks = [
   { label: "Email", href: "mailto:Matt@MJPoncini.com", icon: "✉️" },
 ];
 
-const projectLinks = [
+type ProjectLink = {
+  label: string;
+  href: string;
+  icon: string;
+  iconSrc?: string;
+  tag: string;
+  /** Not hosted yet: render as a plain card instead of a link. */
+  inDevelopment?: boolean;
+};
+
+const projectLinks: ProjectLink[] = [
   {
     label: "Monstra.bot",
     href: "https://monstra.bot",
     icon: "🤖",
     iconSrc: "/Monstrabot.webp",
     tag: "Quantitative research & automation",
-  },
-  {
-    label: "Monstra.pro",
-    href: "https://monstra.pro",
-    icon: "📈",
-    tag: "Robo-advisor, in development",
-    // Nothing is hosted on the domain yet, so the card is not a link.
-    inDevelopment: true,
   },
   {
     label: "hexww2.world",
@@ -610,7 +612,7 @@ export default function Home() {
         {/* Projects */}
         <section className="mt-14">
           <SectionHeading>Projects</SectionHeading>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {projectLinks.map(({ label, href, icon, iconSrc, tag, inDevelopment }) => {
               const body = (
                 <>

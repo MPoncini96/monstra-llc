@@ -52,15 +52,6 @@ const projects: Site[] = [
 
 const sideProjects: Site[] = [
   {
-    label: "Monstra.pro",
-    href: "https://monstra.pro",
-    icon: "📈",
-    tagline: "Robo-advisor plans",
-    description:
-      "Plans for a robo investment adviser that would manage client portfolios with the strategies developed on Monstra.bot. Nothing is in place yet: Monstra is not a registered investment adviser, no advisory services are offered, and the domain does not host a site.",
-    status: "Planned",
-  },
-  {
     label: "January Fitness Cup",
     href: "https://fitness-cup-71zl.vercel.app",
     icon: "🏆",
@@ -82,7 +73,6 @@ const sideProjects: Site[] = [
 /** Public repositories on github.com/MPoncini96. */
 const repos = [
   { name: "MonstraGuide", note: "The workflow documentation platform", lang: "TypeScript" },
-  { name: "MonstraPro", note: "Software for the Pro Box device", lang: "Python" },
   { name: "study", note: "The Monstra.study concept site", lang: "JavaScript" },
   { name: "MonstraBackfill", note: "Historical market data backfill", lang: "Python" },
   { name: "monstra-llc", note: "This site", lang: "TypeScript" },
