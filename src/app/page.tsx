@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
+import ProjectCarousel from "./ProjectCarousel";
 
 /*
  * Placeholders: anything still unknown is written as a TODO string in this
@@ -312,7 +313,7 @@ function ProjectIcon({ project, size }: { project: Project; size: "sm" | "lg" })
 function ProjectCard({ project }: { project: Project }) {
   const shot = screenshotFor(project.id);
   return (
-    <article className={`${card} overflow-hidden`}>
+    <article className={`${card} flex h-full flex-col overflow-hidden`}>
       {shot ? (
         <Image
           src={shot}
@@ -328,7 +329,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
 
-      <div className="p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
           <h3 className="text-lg font-semibold text-parchment">{project.label}</h3>
           {!isTodo(project.status) && (
@@ -370,7 +371,7 @@ function ProjectCard({ project }: { project: Project }) {
           </p>
         )}
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2 pt-4">
           <ExternalLink href={project.href} className={buttonPrimary}>
             Live <span aria-hidden>↗</span>
           </ExternalLink>
@@ -429,11 +430,11 @@ export default function Home() {
         {/* Projects */}
         <section className="mt-16">
           <SectionHeading id="projects">Projects</SectionHeading>
-          <div className="space-y-6">
+          <ProjectCarousel>
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
-          </div>
+          </ProjectCarousel>
         </section>
 
         {/* Research */}
